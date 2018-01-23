@@ -10,6 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM Solution Documentation",
 		..\..\..\..\Desktop\Data Warehousing\Team-BCF\Coffee Merchant DM Solution\DM Solution Documentation\Coffee Merchant Solution Workbook.xlsx = ..\..\..\..\Desktop\Data Warehousing\Team-BCF\Coffee Merchant DM Solution\DM Solution Documentation\Coffee Merchant Solution Workbook.xlsx
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM Solution Documentation 2", "DM Solution Documentation 2", "{4A724FAB-EDF9-443C-9921-20E4324BC2D4}"
+	ProjectSection(SolutionItems) = preProject
+		Coffee Merchant Dimensional Diagram (STAR schema).vsdx = Coffee Merchant Dimensional Diagram (STAR schema).vsdx
+		Coffee Merchant Solution Documentation.docx = Coffee Merchant Solution Documentation.docx
+		Coffee Merchant Solution Workbook.xlsx = Coffee Merchant Solution Workbook.xlsx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
