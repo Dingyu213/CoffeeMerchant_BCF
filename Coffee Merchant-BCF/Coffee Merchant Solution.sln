@@ -10,13 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM Solution Documentation",
 		Coffee Merchant Solution Workbook.xlsx = Coffee Merchant Solution Workbook.xlsx
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3D9538EC-F25D-4F34-AFAC-11AA76C14CB6}"
-EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{3D9538EC-F25D-4F34-AFAC-11AA76C14CB6} = {4A724FAB-EDF9-443C-9921-20E4324BC2D4}
 	EndGlobalSection
 EndGlobal
