@@ -57,21 +57,21 @@ CREATE TABLE DimRegion
 --
 CREATE TABLE DimEmployee
 	(Employee_SK    INT IDENTITY(1,1) CONSTRAINT pk_dimemployee PRIMARY KEY,
-       Employee_AK     INT NOT NULL,
+    Employee_AK     INT NOT NULL,
 	First_Name      NVARCHAR(30) NOT NULL,
 	Last_Name       NVARCHAR(30) NOT NULL,
 	Commission_Rate NUMERIC(4,4) NOT NULL,
 	Hire_Date       DATETIME NOT NULL,
 	Birth_Date      DATETIME NOT NULL,
-	Gender          NVARCHAR(1) NOT NULL CONSTRAINT ck_dimemployee_gender CHECK ((Gender = 'M') OR (Gender = 'F'))
+	Gender          NVARCHAR(1) NOT NULL 
 	);
 --
 CREATE TABLE DimProduct
 	(Product_SK	       INT IDENTITY(1,1) CONSTRAINT pk_dimproduct PRIMARY KEY,
-	Product_AK           INT NOT NULL,
+	Product_AK         INT NOT NULL,
 	Item_Name	       NVARCHAR(40) NOT NULL,
 	Item_Type	       NVARCHAR(5) NOT NULL,
-	Country_of_Origin	NVARCHAR(40) NOT NULL
+	Country_of_Origin  NVARCHAR(40) NOT NULL
 	);
 --
 CREATE TABLE DimDate
@@ -91,19 +91,19 @@ CREATE TABLE DimDate
 
 --
 CREATE TABLE FactSales
-	(Product_SK  INT CONSTRAINT fk_factsales_dimproduct_sk FOREIGN KEY REFERENCES DimProduct(Product_SK),
-        Employee_SK INT CONSTRAINT fk_factsales_dimemployee_sk FOREIGN KEY REFERENCES DimEmployee(Employee_SK),
-        Region_SK  INT CONSTRAINT fk_factsales_dimregion_sk FOREIGN KEY REFERENCES DimRegion(Region_SK),
-		Order_ID INT,
-        Order_Date INT NOT NULL CONSTRAINT fk_factsales_orderdate FOREIGN KEY REFERENCES DimDate(Date_SK),
-        Ship_Date  INT NOT NULL CONSTRAINT fk_factsales_shipdate FOREIGN KEY REFERENCES DimDate(Date_SK),
-        Sales_Quantity INT NOT NULL,
-        Full_Price NUMERIC(6,2) NOT NULL,
-        Cost NUMERIC(6,2) NOT NULL,
-        Discount NUMERIC(4,4) NOT NULL,
-        Inventory_On_Hand INT NOT NULL,
-        Tax_Rate NUMERIC(7,4) NOT NULL,
-		CONSTRAINT pk_factsales PRIMARY KEY (Order_ID, Product_SK, Employee_SK, Region_SK)
+	(Product_SK        INT CONSTRAINT fk_factsales_dimproduct_sk FOREIGN KEY REFERENCES DimProduct(Product_SK),
+     Employee_SK       INT CONSTRAINT fk_factsales_dimemployee_sk FOREIGN KEY REFERENCES DimEmployee(Employee_SK),
+     Region_SK         INT CONSTRAINT fk_factsales_dimregion_sk FOREIGN KEY REFERENCES DimRegion(Region_SK),
+	 Order_ID          INT,
+     Order_Date        INT NOT NULL CONSTRAINT fk_factsales_orderdate FOREIGN KEY REFERENCES DimDate(Date_SK),
+     Ship_Date         INT NOT NULL CONSTRAINT fk_factsales_shipdate FOREIGN KEY REFERENCES DimDate(Date_SK),
+     Sales_Quantity    INT NOT NULL,
+     Full_Price        NUMERIC(6,2) NOT NULL,
+     Cost              NUMERIC(6,2) NOT NULL,
+     Discount          NUMERIC(4,4) NOT NULL,
+     Inventory_On_Hand INT NOT NULL,
+     Tax_Rate          NUMERIC(7,4) NOT NULL,
+	 CONSTRAINT pk_factsales PRIMARY KEY (Order_ID, Product_SK, Employee_SK, Region_SK)
 );
     
   	
