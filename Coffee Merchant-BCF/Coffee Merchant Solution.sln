@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM Solution Documentation", "DM Solution Documentation", "{4A724FAB-EDF9-443C-9921-20E4324BC2D4}"
 	ProjectSection(SolutionItems) = preProject
-		Documentations\Coffee Merchant Dimensional Diagram (STAR schema).vsdx = Documentations\Coffee Merchant Dimensional Diagram (STAR schema).vsdx
-		Documentations\Coffee Merchant Solution Documentation.docx = Documentations\Coffee Merchant Solution Documentation.docx
-		Documentations\Coffee Merchant Solution Workbook.xlsx = Documentations\Coffee Merchant Solution Workbook.xlsx
+		Coffee Merchant Dimensional Diagram (STAR schema).vsdx = Coffee Merchant Dimensional Diagram (STAR schema).vsdx
+		Coffee Merchant Solution Documentation.docx = Coffee Merchant Solution Documentation.docx
+		Coffee Merchant Solution Workbook.xlsx = Coffee Merchant Solution Workbook.xlsx
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM Build", "DM Build", "{D2D3483A-E441-409D-AD9B-04F9AAA47201}"
