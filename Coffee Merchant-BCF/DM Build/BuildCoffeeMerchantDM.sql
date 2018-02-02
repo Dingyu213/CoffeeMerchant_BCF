@@ -94,14 +94,16 @@ CREATE TABLE FactSales
 	(Product_SK  INT CONSTRAINT fk_factsales_dimproduct_sk FOREIGN KEY REFERENCES DimProduct(Product_SK),
         Employee_SK INT CONSTRAINT fk_factsales_dimemployee_sk FOREIGN KEY REFERENCES DimEmployee(Employee_SK),
         Region_SK  INT CONSTRAINT fk_factsales_dimregion_sk FOREIGN KEY REFERENCES DimRegion(Region_SK),
-        Order_Date DATETIME NOT NULL,
-        Ship_Date  DATETIME NOT NULL,
+		Order_ID INT,
+        Order_Date INT NOT NULL CONSTRAINT fk_factsales_orderdate FOREIGN KEY REFERENCES DimDate(Date_SK),
+        Ship_Date  INT NOT NULL CONSTRAINT fk_factsales_shipdate FOREIGN KEY REFERENCES DimDate(Date_SK),
         Sales_Quantity INT NOT NULL,
         Full_Price NUMERIC(6,2) NOT NULL,
         Cost NUMERIC(6,2) NOT NULL,
         Discount NUMERIC(4,4) NOT NULL,
         Inventory_On_Hand INT NOT NULL,
-        Tax_Rate NUMERIC(7,4) NOT NULL
+        Tax_Rate NUMERIC(7,4) NOT NULL,
+		CONSTRAINT pk_factsales PRIMARY KEY (Order_ID, Product_SK, Employee_SK, Region_SK)
 );
     
   	
