@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM Solution Documentation", "DM Solution Documentation", "{4A724FAB-EDF9-443C-9921-20E4324BC2D4}"
 	ProjectSection(SolutionItems) = preProject
-		Coffee Merchant Dimensional Diagram (STAR schema).vsdx = Coffee Merchant Dimensional Diagram (STAR schema).vsdx
-		Coffee Merchant Solution Documentation.docx = Coffee Merchant Solution Documentation.docx
-		Coffee Merchant Solution Workbook.xlsx = Coffee Merchant Solution Workbook.xlsx
+		..\..\..\..\Desktop\Data Warehousing\Coffee Merchant\CoffeeMerchant_BCF\Coffee Merchant-BCF\Coffee Merchant Dimensional Diagram (STAR schema).vsdx = ..\..\..\..\Desktop\Data Warehousing\Coffee Merchant\CoffeeMerchant_BCF\Coffee Merchant-BCF\Coffee Merchant Dimensional Diagram (STAR schema).vsdx
+		..\..\..\..\Desktop\Data Warehousing\Coffee Merchant\CoffeeMerchant_BCF\Coffee Merchant-BCF\Coffee Merchant Solution Documentation.docx = ..\..\..\..\Desktop\Data Warehousing\Coffee Merchant\CoffeeMerchant_BCF\Coffee Merchant-BCF\Coffee Merchant Solution Documentation.docx
+		..\..\..\..\Desktop\Data Warehousing\Coffee Merchant\CoffeeMerchant_BCF\Coffee Merchant-BCF\Coffee Merchant Solution Workbook.xlsx = ..\..\..\..\Desktop\Data Warehousing\Coffee Merchant\CoffeeMerchant_BCF\Coffee Merchant-BCF\Coffee Merchant Solution Workbook.xlsx
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM Build", "DM Build", "{D2D3483A-E441-409D-AD9B-04F9AAA47201}"
@@ -15,8 +15,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM Build", "DM Build", "{D2
 		DM Build\BuildCoffeeMerchantDM.sql = DM Build\BuildCoffeeMerchantDM.sql
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM ETL", "DM ETL", "{872200DE-B680-42E6-ACD4-41823F31554D}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Coffee Merchant SSIS", "DM ETL\Coffee Merchant SSIS\Coffee Merchant SSIS.dtproj", "{419046D5-5D90-4327-A7EF-6025074F8C4D}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{419046D5-5D90-4327-A7EF-6025074F8C4D}.Development|Default.ActiveCfg = Development
+		{419046D5-5D90-4327-A7EF-6025074F8C4D}.Development|Default.Build.0 = Development
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{419046D5-5D90-4327-A7EF-6025074F8C4D} = {872200DE-B680-42E6-ACD4-41823F31554D}
 	EndGlobalSection
 EndGlobal
