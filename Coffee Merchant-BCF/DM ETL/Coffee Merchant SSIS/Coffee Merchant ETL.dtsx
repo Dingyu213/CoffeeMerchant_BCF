@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Coffee Merchant ETL"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{B0511F6A-0101-43A8-B3DD-6A39B3B9C8FB}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{4436FB68-CEC9-49A7-937E-BD36C67B9C92}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3275,17 +3275,17 @@ where [refTable].[Date] = ?</property>
                           externalMetadataColumnId="Package\Load Fact Table\Load FactSales\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Order_ID]"
                           lineageId="Package\Load Fact Table\Load FactSales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderID_DD]" />
                         <inputColumn
-                          refId="Package\Load Fact Table\Load FactSales\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrderDate_SK]"
-                          cachedDataType="i4"
-                          cachedName="OrderDate_SK"
+                          refId="Package\Load Fact Table\Load FactSales\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrderDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="OrderDate"
                           externalMetadataColumnId="Package\Load Fact Table\Load FactSales\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Order_Date]"
-                          lineageId="Package\Load Fact Table\Load FactSales\234:invalid" />
+                          lineageId="Package\Load Fact Table\Load FactSales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]" />
                         <inputColumn
-                          refId="Package\Load Fact Table\Load FactSales\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ShipDate_SK]"
-                          cachedDataType="i4"
-                          cachedName="ShipDate_SK"
+                          refId="Package\Load Fact Table\Load FactSales\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ShipDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="ShipDate"
                           externalMetadataColumnId="Package\Load Fact Table\Load FactSales\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ship_Date]"
-                          lineageId="Package\Load Fact Table\Load FactSales\LKP-ShipDateKey.Outputs[Lookup Match Output].Columns[ShipDate_SK]" />
+                          lineageId="Package\Load Fact Table\Load FactSales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShipDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3307,11 +3307,11 @@ where [refTable].[Date] = ?</property>
                           name="Order_ID" />
                         <externalMetadataColumn
                           refId="Package\Load Fact Table\Load FactSales\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Order_Date]"
-                          dataType="i4"
+                          dataType="dbTimeStamp"
                           name="Order_Date" />
                         <externalMetadataColumn
                           refId="Package\Load Fact Table\Load FactSales\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ship_Date]"
-                          dataType="i4"
+                          dataType="dbTimeStamp"
                           name="Ship_Date" />
                         <externalMetadataColumn
                           refId="Package\Load Fact Table\Load FactSales\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sales_Quantity]"
@@ -3866,7 +3866,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{60DF69FB-2483-4A7C-A28E-A11771F66EF0}"
-              SQLTask:SqlStatementSource="-- CoffeeMerchantDM database developed&#xA;-- Written by Siyu Pei, Xiao Li, Dingyu Liang&#xA;-- Originally Written: January 2018&#xA;---------------------------------------------------------------------------------------&#xA;IF NOT EXISTS(SELECT * FROM sys.databases&#xA;&#x9;WHERE name = N'CoffeeMerchantDM')&#xA;&#x9;CREATE DATABASE CoffeeMerchantDM&#xA;GO&#xA;USE CoffeeMerchantDM&#xA;&#xA;--&#xA;-- Delete existing tables&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'FactSales'&#xA;       )&#xA;&#x9;DROP TABLE FactSales;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimProduct'&#xA;       )&#xA;&#x9;DROP TABLE DimProduct;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimEmployee'&#xA;       )&#xA;&#x9;DROP TABLE DimEmployee;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimDate'&#xA;       )&#xA;&#x9;DROP TABLE DimDate;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimRegion'&#xA;       )&#xA;&#x9;DROP TABLE DimRegion;&#xA;--&#xA;-- Create tables&#xA;--&#xA;CREATE TABLE DimRegion&#xA;&#x9;(Region_SK   INT IDENTITY(1,1) CONSTRAINT pk_dimregion PRIMARY KEY,&#xA;&#x9;Region_AK    NVARCHAR(2) NOT NULL,&#xA;&#x9;State        NVARCHAR(25) NOT NULL,&#xA;&#x9;City         NVARCHAR(50) NOT NULL&#xA;&#x9;);&#xA;&#xA;--&#xA;CREATE TABLE DimEmployee&#xA;&#x9;(Employee_SK    INT IDENTITY(1,1) CONSTRAINT pk_dimemployee PRIMARY KEY,&#xA;    Employee_AK     INT NOT NULL,&#xA;&#x9;First_Name      NVARCHAR(30) NOT NULL,&#xA;&#x9;Last_Name       NVARCHAR(30) NOT NULL,&#xA;&#x9;Commission_Rate NUMERIC(4,4) NOT NULL,&#xA;&#x9;Hire_Date       DATETIME NOT NULL,&#xA;&#x9;Birth_Date      DATETIME NOT NULL,&#xA;&#x9;Gender          NVARCHAR(1) NOT NULL &#xA;&#x9;);&#xA;--&#xA;CREATE TABLE DimProduct&#xA;&#x9;(Product_SK&#x9;       INT IDENTITY(1,1) CONSTRAINT pk_dimproduct PRIMARY KEY,&#xA;&#x9;Product_AK           INT NOT NULL,&#xA;&#x9;Item_Name&#x9;       NVARCHAR(40) NOT NULL,&#xA;&#x9;Item_Type&#x9;       NVARCHAR(5) NOT NULL,&#xA;&#x9;Country_of_Origin&#x9;NVARCHAR(40) NOT NULL&#xA;&#x9;);&#xA;--&#xA;CREATE TABLE [dbo].[DimDate]&#xA;&#x9;(&#x9;&#xA;&#x9;Date_SK INT PRIMARY KEY, &#xA;&#x9;Date DATETIME,&#xA;&#x9;FullDate CHAR(10),-- Date in MM-dd-yyyy format&#xA;&#x9;DayOfMonth INT, -- Field will hold day number of Month&#xA;&#x9;DayName VARCHAR(9), -- Contains name of the day, Sunday, Monday &#xA;&#x9;DayOfWeek INT,-- First Day Sunday=1 and Saturday=7&#xA;&#x9;DayOfWeekInMonth INT, -- 1st Monday or 2nd Monday in Month&#xA;&#x9;DayOfWeekInYear INT,&#xA;&#x9;DayOfQuarter INT,&#xA;&#x9;DayOfYear INT,&#xA;&#x9;WeekOfMonth INT,-- Week Number of Month &#xA;&#x9;WeekOfQuarter INT, -- Week Number of the Quarter&#xA;&#x9;WeekOfYear INT,-- Week Number of the Year&#xA;&#x9;Month INT, -- Number of the Month 1 to 12{}&#xA;&#x9;MonthName VARCHAR(9),-- January, February etc&#xA;&#x9;MonthOfQuarter INT,-- Month Number belongs to Quarter&#xA;&#x9;Quarter CHAR(2),&#xA;&#x9;QuarterName VARCHAR(9),-- First,Second..&#xA;&#x9;Year INT,-- Year value of Date stored in Row&#xA;&#x9;YearName CHAR(7), -- CY 2015,CY 2016&#xA;&#x9;MonthYear CHAR(10), -- Jan-2016,Feb-2016&#xA;&#x9;MMYYYY INT,&#xA;&#x9;FirstDayOfMonth DATE,&#xA;&#x9;LastDayOfMonth DATE,&#xA;&#x9;FirstDayOfQuarter DATE,&#xA;&#x9;LastDayOfQuarter DATE,&#xA;&#x9;FirstDayOfYear DATE,&#xA;&#x9;LastDayOfYear DATE,&#xA;&#x9;IsHoliday BIT,-- Flag 1=National Holiday, 0-No National Holiday&#xA;&#x9;IsWeekday BIT,-- 0=Week End ,1=Week Day&#xA;&#x9;Holiday VARCHAR(50),--Name of Holiday in US&#xA;&#x9;Season VARCHAR(10)--Name of Season&#xA;&#x9;);&#xA;--&#xA;CREATE TABLE FactSales&#xA;&#x9;(Product_SK  INT CONSTRAINT fk_factsales_dimproduct_sk FOREIGN KEY REFERENCES DimProduct(Product_SK),&#xA;        Employee_SK INT CONSTRAINT fk_factsales_dimemployee_sk FOREIGN KEY REFERENCES DimEmployee(Employee_SK),&#xA;        Region_SK  INT CONSTRAINT fk_factsales_dimregion_sk FOREIGN KEY REFERENCES DimRegion(Region_SK),&#xA;&#x9;&#x9;Order_ID INT,&#xA;        Order_Date INT NOT NULL CONSTRAINT fk_factsales_orderdate FOREIGN KEY REFERENCES DimDate(Date_SK),&#xA;        Ship_Date  INT NOT NULL CONSTRAINT fk_factsales_shipdate FOREIGN KEY REFERENCES DimDate(Date_SK),&#xA;        Sales_Quantity INT NOT NULL,&#xA;        Full_Price NUMERIC(6,2) NOT NULL,&#xA;        Cost NUMERIC(6,2) NOT NULL,&#xA;        Discount NUMERIC(4,4) NOT NULL,&#xA;        Inventory_On_Hand INT NOT NULL,&#xA;        Tax_Rate NUMERIC(7,4) NOT NULL,&#xA;&#x9;&#x9;CONSTRAINT pk_factsales PRIMARY KEY (Order_ID, Product_SK, Employee_SK, Region_SK)&#xA;);&#xA; --End of the OLAP file.&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="-- CoffeeMerchantDM database developed&#xA;-- Written by Siyu Pei, Xiao Li, Dingyu Liang&#xA;-- Originally Written: January 2018&#xA;---------------------------------------------------------------------------------------&#xA;IF NOT EXISTS(SELECT * FROM sys.databases&#xA;&#x9;WHERE name = N'CoffeeMerchantDM')&#xA;&#x9;CREATE DATABASE CoffeeMerchantDM&#xA;GO&#xA;USE CoffeeMerchantDM&#xA;&#xA;--&#xA;-- Delete existing tables&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'FactSales'&#xA;       )&#xA;&#x9;DROP TABLE FactSales;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimProduct'&#xA;       )&#xA;&#x9;DROP TABLE DimProduct;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimEmployee'&#xA;       )&#xA;&#x9;DROP TABLE DimEmployee;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimDate'&#xA;       )&#xA;&#x9;DROP TABLE DimDate;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimRegion'&#xA;       )&#xA;&#x9;DROP TABLE DimRegion;&#xA;--&#xA;-- Create tables&#xA;--&#xA;CREATE TABLE DimRegion&#xA;&#x9;(Region_SK   INT IDENTITY(1,1) CONSTRAINT pk_dimregion PRIMARY KEY,&#xA;&#x9;Region_AK    NVARCHAR(2) NOT NULL,&#xA;&#x9;State        NVARCHAR(25) NOT NULL,&#xA;&#x9;City         NVARCHAR(50) NOT NULL&#xA;&#x9;);&#xA;&#xA;--&#xA;CREATE TABLE DimEmployee&#xA;&#x9;(Employee_SK    INT IDENTITY(1,1) CONSTRAINT pk_dimemployee PRIMARY KEY,&#xA;    Employee_AK     INT NOT NULL,&#xA;&#x9;First_Name      NVARCHAR(30) NOT NULL,&#xA;&#x9;Last_Name       NVARCHAR(30) NOT NULL,&#xA;&#x9;Commission_Rate NUMERIC(4,4) NOT NULL,&#xA;&#x9;Hire_Date       DATETIME NOT NULL,&#xA;&#x9;Birth_Date      DATETIME NOT NULL,&#xA;&#x9;Gender          NVARCHAR(1) NOT NULL &#xA;&#x9;);&#xA;--&#xA;CREATE TABLE DimProduct&#xA;&#x9;(Product_SK&#x9;       INT IDENTITY(1,1) CONSTRAINT pk_dimproduct PRIMARY KEY,&#xA;&#x9;Product_AK           INT NOT NULL,&#xA;&#x9;Item_Name&#x9;       NVARCHAR(40) NOT NULL,&#xA;&#x9;Item_Type&#x9;       NVARCHAR(5) NOT NULL,&#xA;&#x9;Country_of_Origin&#x9;NVARCHAR(40) NOT NULL&#xA;&#x9;);&#xA;--&#xA;CREATE TABLE [dbo].[DimDate]&#xA;&#x9;(&#x9;&#xA;&#x9;Date_SK INT PRIMARY KEY, &#xA;&#x9;Date DATETIME,&#xA;&#x9;FullDate CHAR(10),-- Date in MM-dd-yyyy format&#xA;&#x9;DayOfMonth INT, -- Field will hold day number of Month&#xA;&#x9;DayName VARCHAR(9), -- Contains name of the day, Sunday, Monday &#xA;&#x9;DayOfWeek INT,-- First Day Sunday=1 and Saturday=7&#xA;&#x9;DayOfWeekInMonth INT, -- 1st Monday or 2nd Monday in Month&#xA;&#x9;DayOfWeekInYear INT,&#xA;&#x9;DayOfQuarter INT,&#xA;&#x9;DayOfYear INT,&#xA;&#x9;WeekOfMonth INT,-- Week Number of Month &#xA;&#x9;WeekOfQuarter INT, -- Week Number of the Quarter&#xA;&#x9;WeekOfYear INT,-- Week Number of the Year&#xA;&#x9;Month INT, -- Number of the Month 1 to 12{}&#xA;&#x9;MonthName VARCHAR(9),-- January, February etc&#xA;&#x9;MonthOfQuarter INT,-- Month Number belongs to Quarter&#xA;&#x9;Quarter CHAR(2),&#xA;&#x9;QuarterName VARCHAR(9),-- First,Second..&#xA;&#x9;Year INT,-- Year value of Date stored in Row&#xA;&#x9;YearName CHAR(7), -- CY 2015,CY 2016&#xA;&#x9;MonthYear CHAR(10), -- Jan-2016,Feb-2016&#xA;&#x9;MMYYYY INT,&#xA;&#x9;FirstDayOfMonth DATE,&#xA;&#x9;LastDayOfMonth DATE,&#xA;&#x9;FirstDayOfQuarter DATE,&#xA;&#x9;LastDayOfQuarter DATE,&#xA;&#x9;FirstDayOfYear DATE,&#xA;&#x9;LastDayOfYear DATE,&#xA;&#x9;IsHoliday BIT,-- Flag 1=National Holiday, 0-No National Holiday&#xA;&#x9;IsWeekday BIT,-- 0=Week End ,1=Week Day&#xA;&#x9;Holiday VARCHAR(50),--Name of Holiday in US&#xA;&#x9;Season VARCHAR(10)--Name of Season&#xA;&#x9;);&#xA;--&#xA;CREATE TABLE FactSales&#xA;&#x9;(Product_SK  INT CONSTRAINT fk_factsales_dimproduct_sk FOREIGN KEY REFERENCES DimProduct(Product_SK),&#xA;        Employee_SK INT CONSTRAINT fk_factsales_dimemployee_sk FOREIGN KEY REFERENCES DimEmployee(Employee_SK),&#xA;        Region_SK  INT CONSTRAINT fk_factsales_dimregion_sk FOREIGN KEY REFERENCES DimRegion(Region_SK),&#xA;&#x9;&#x9;Order_ID INT,&#xA;        Order_Date DATETIME NOT NULL CONSTRAINT fk_factsales_orderdate FOREIGN KEY REFERENCES DimDate(Date_SK),&#xA;        Ship_Date  DATETIME NOT NULL CONSTRAINT fk_factsales_shipdate FOREIGN KEY REFERENCES DimDate(Date_SK),&#xA;        Sales_Quantity INT NOT NULL,&#xA;        Full_Price NUMERIC(6,2) NOT NULL,&#xA;        Cost NUMERIC(6,2) NOT NULL,&#xA;        Discount NUMERIC(4,4) NOT NULL,&#xA;        Inventory_On_Hand INT NOT NULL,&#xA;        Tax_Rate NUMERIC(7,4) NOT NULL,&#xA;&#x9;&#x9;CONSTRAINT pk_factsales PRIMARY KEY (Order_ID, Product_SK, Employee_SK, Region_SK)&#xA;);&#xA; --End of the OLAP file.&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -4647,10 +4647,6 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           Id="Package\Load Fact Table\Load FactSales\LKP-Region_SK"
           TopLeft="167.5,261.666666666667" />
         <NodeLayout
-          Size="172,42.6666666666667"
-          Id="Package\Load Fact Table\Load FactSales\OLE DB Destination"
-          TopLeft="155,515.916666724782" />
-        <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Load Fact Table\Load FactSales\LKP-Employee_SK"
           TopLeft="155.333333333333,177.333333333333" />
@@ -4792,27 +4788,31 @@ INNER JOIN CoffeeMerchant.dbo.Employee
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Load Fact Table\Load FactSales\OLE DB Destination"
+          TopLeft="146.874997811392,507.124997801334" />
         <EdgeLayout
           Id="Package\Load Fact Table\Load FactSales.Paths[Lookup Match Output4]"
-          TopLeft="240.083333333333,471.833333333334">
+          TopLeft="236.020832239029,471.833333333334">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.0833333914478"
+              EndConnector="0,35.291664468"
               Start="0,0"
-              End="0,36.5833333914478">
+              End="0,27.791664468">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5833333914478" />
+                    End="0,27.791664468" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-57.0600390625,10.2916666957239,114.120078125,16"
+              BoundingBox="-48.19138671875,8.09114473399998,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4833,7 +4833,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4843,7 +4843,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4870,19 +4870,6 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact Table\Load FactSales\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -4952,6 +4939,19 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact Table\Load FactSales\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
