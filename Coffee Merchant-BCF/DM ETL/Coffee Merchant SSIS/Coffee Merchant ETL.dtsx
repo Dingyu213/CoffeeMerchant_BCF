@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-FTULKI8\XIAO LI"
   DTS:DTSID="{3E7D36F4-F5E0-41B2-B162-34D448544AA5}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.1400.361"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
   DTS:LocaleID="1033"
   DTS:ObjectName="Coffee Merchant ETL"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{76A12ACE-12D3-4BB9-BF3C-581AE213FD17}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{B0511F6A-0101-43A8-B3DD-6A39B3B9C8FB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -105,7 +105,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -285,7 +285,7 @@
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimEmployee] SET [Commission_Rate] = ?,[Gender] = ?,[Last_Name] = ? WHERE [Employee_AK] = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimEmployee] SET [Commission_Rate] = ?,[Gender] = ?,[Last_Name] = ? WHERE [Employee_AK] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -446,7 +446,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT dbo.Employee.EmployeeID AS Employee_AK,
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT dbo.Employee.EmployeeID AS Employee_AK,
        dbo.Employee.Gender AS Gender,
 	   dbo.Employee.FirstName AS First_Name,
 	   dbo.Employee.LastName AS Last_Name,
@@ -670,7 +670,7 @@ ORDER BY Employee_AK</property>
                       dataType="System.String"
                       description="Specifies the SELECT statement used to create a schema rowset."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Birth_Date], [Commission_Rate], [Employee_AK], [First_Name], [Gender], [Hire_Date], [Last_Name] FROM [dbo].[DimEmployee]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Birth_Date], [Commission_Rate], [Employee_AK], [First_Name], [Gender], [Hire_Date], [Last_Name] FROM [dbo].[DimEmployee]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -964,7 +964,7 @@ ORDER BY Employee_AK</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1110,7 +1110,7 @@ ORDER BY Employee_AK</property>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimProduct] SET [Country_of_Origin] = ?,[Item_Name] = ?,[Item_Type] = ? WHERE [Product_AK] = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimProduct] SET [Country_of_Origin] = ?,[Item_Name] = ?,[Item_Type] = ? WHERE [Product_AK] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1269,11 +1269,11 @@ ORDER BY Employee_AK</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- Script written by Siyu Pei
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">-- Script written by Siyu Pei
 -- Script query to select Products for DimProduct
 SELECT InventoryID AS Product_AK,
-	ISNULL(Inventory.Name,'N/A') AS Item_Name,
-	ISNULL(Inventory.ItemType,'N/A') AS Item_Type,
+	Inventory.Name AS Item_Name,
+	Inventory.ItemType AS Item_Type,
 	ISNULL(Country.CountryName, 'N/A') AS Country_Of_Origin
 FROM Inventory
 	LEFT OUTER JOIN Country
@@ -1434,7 +1434,7 @@ ORDER BY Product_AK</property>
                       dataType="System.String"
                       description="Specifies the SELECT statement used to create a schema rowset."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Country_of_Origin], [Item_Name], [Item_Type], [Product_AK] FROM [dbo].[DimProduct]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Country_of_Origin], [Item_Name], [Item_Type], [Product_AK] FROM [dbo].[DimProduct]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -1673,7 +1673,7 @@ ORDER BY Product_AK</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1792,6 +1792,141 @@ ORDER BY Product_AK</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Load Dim Tables\Load DimRegion\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimRegion] SET [City] = ?,[State] = ? WHERE [Region_AK] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.CoffeeMerchantDM]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.CoffeeMerchantDM]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Inputs[OLE DB Command Input].Columns[City]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="City"
+                          externalMetadataColumnId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Load Dim Tables\Load DimRegion\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]" />
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Inputs[OLE DB Command Input].Columns[Region_AK]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="Region_AK"
+                          externalMetadataColumnId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Load Dim Tables\Load DimRegion\OLE DB Source.Outputs[OLE DB Source Output].Columns[Region_AK]" />
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Inputs[OLE DB Command Input].Columns[State]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="State"
+                          externalMetadataColumnId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Load Dim Tables\Load DimRegion\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="wstr"
+                          length="50"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="wstr"
+                          length="25"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="wstr"
+                          length="2"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Load Dim Tables\Load DimRegion\OLE DB Source"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
@@ -1816,9 +1951,9 @@ ORDER BY Product_AK</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- Script written by Dingyu Liang
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">-- Script written by Dingyu Liang
 -- Script query to select Region for DimRegion
-SELECT StateID AS Region_AK,
+SELECT DISTINCT StateID AS Region_AK,
 ISNULL(dbo.State.StateName, 'N/A') AS State,
 ISNULL(dbo.Consumer.City, 'N/A') AS City
 
@@ -1963,7 +2098,7 @@ ORDER BY Region_AK</property>
                       dataType="System.String"
                       description="Specifies the SELECT statement used to create a schema rowset."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [City], [Region_AK], [State] FROM [dbo].[DimRegion]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [City], [Region_AK], [State] FROM [dbo].[DimRegion]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -2022,7 +2157,7 @@ ORDER BY Region_AK</property>
                             <property
                               dataType="System.Int32"
                               name="ColumnType"
-                              typeConverter="ColumnType">4</property>
+                              typeConverter="ColumnType">2</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -2050,7 +2185,7 @@ ORDER BY Region_AK</property>
                             <property
                               dataType="System.Int32"
                               name="ColumnType"
-                              typeConverter="ColumnType">4</property>
+                              typeConverter="ColumnType">2</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -2128,6 +2263,11 @@ ORDER BY Region_AK</property>
               </components>
               <paths>
                 <path
+                  refId="Package\Load Dim Tables\Load DimRegion.Paths[Changing Attribute Updates Output]"
+                  endId="Package\Load Dim Tables\Load DimRegion\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Changing Attribute Updates Output"
+                  startId="Package\Load Dim Tables\Load DimRegion\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+                <path
                   refId="Package\Load Dim Tables\Load DimRegion.Paths[New Output]"
                   endId="Package\Load Dim Tables\Load DimRegion\Insert Destination.Inputs[OLE DB Destination Input]"
                   name="New Output"
@@ -2154,19 +2294,19 @@ ORDER BY Region_AK</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Dim Tables.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{53403519-0E98-4518-8DD7-3AED10D51BE3}"
+          DTS:DTSID="{B91A50A4-B43C-463B-BE2B-54E68552E784}"
           DTS:From="Package\Load Dim Tables\Load DimProduct"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Load Dim Tables\Load DimRegion" />
+          DTS:To="Package\Load Dim Tables\Load DimEmployee" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Dim Tables.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{FA510972-1994-41DE-957A-2218AFF129CA}"
-          DTS:From="Package\Load Dim Tables\Load DimRegion"
+          DTS:DTSID="{096DFCCF-BEA0-4809-9E18-16EFEECB152F}"
+          DTS:From="Package\Load Dim Tables\Load DimEmployee"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Load Dim Tables\Load DimEmployee" />
+          DTS:To="Package\Load Dim Tables\Load DimRegion" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -2207,14 +2347,14 @@ ORDER BY Region_AK</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Employee_SK, Employee_AK
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT Employee_SK, Employee_AK
 FROM DimEmployee</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT Employee_SK, Employee_AK
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT Employee_SK, Employee_AK
 FROM DimEmployee) [refTable]
 where [refTable].[Employee_AK] = ?</property>
                     <property
@@ -2367,15 +2507,15 @@ where [refTable].[Employee_AK] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Date_SK, Date
-FROM DimDate</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT Date_SK, Date
+FROM   DimDate</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT Date_SK, Date
-FROM DimDate) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT Date_SK, Date
+FROM   DimDate) [refTable]
 where [refTable].[Date] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -2465,11 +2605,11 @@ where [refTable].[Date] = ?</property>
                       synchronousInputId="Package\Load Fact Table\Load FactSales\LKP-OrderDateKey.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load Fact Table\Load FactSales\LKP-OrderDateKey.Outputs[Lookup Match Output].Columns[OrderDate_SK]"
+                          refId="Package\Load Fact Table\Load FactSales\LKP-OrderDateKey.Outputs[Lookup Match Output].Columns[Date_SK]"
                           dataType="i4"
                           errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\Load Fact Table\Load FactSales\LKP-OrderDateKey.Outputs[Lookup Match Output].Columns[OrderDate_SK]"
-                          name="OrderDate_SK"
+                          lineageId="Package\Load Fact Table\Load FactSales\LKP-OrderDateKey.Outputs[Lookup Match Output].Columns[Date_SK]"
+                          name="Date_SK"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -2527,14 +2667,14 @@ where [refTable].[Date] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Product_SK, Product_AK
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT Product_SK, Product_AK
 FROM DimProduct</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT Product_SK, Product_AK
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT Product_SK, Product_AK
 FROM DimProduct) [refTable]
 where [refTable].[Product_AK] = ?</property>
                     <property
@@ -2687,14 +2827,14 @@ where [refTable].[Product_AK] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Region_SK, Region_AK
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT Region_SK, Region_AK
 FROM DimRegion</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT Region_SK, Region_AK
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT Region_SK, Region_AK
 FROM DimRegion) [refTable]
 where [refTable].[Region_AK] = ?</property>
                     <property
@@ -2848,14 +2988,14 @@ where [refTable].[Region_AK] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Date_SK, Date
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT Date_SK, Date
 FROM DimDate</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT Date_SK, Date
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT Date_SK, Date
 FROM DimDate) [refTable]
 where [refTable].[Date] = ?</property>
                     <property
@@ -3019,7 +3159,7 @@ where [refTable].[Date] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3139,7 +3279,7 @@ where [refTable].[Date] = ?</property>
                           cachedDataType="i4"
                           cachedName="OrderDate_SK"
                           externalMetadataColumnId="Package\Load Fact Table\Load FactSales\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Order_Date]"
-                          lineageId="Package\Load Fact Table\Load FactSales\LKP-OrderDateKey.Outputs[Lookup Match Output].Columns[OrderDate_SK]" />
+                          lineageId="Package\Load Fact Table\Load FactSales\234:invalid" />
                         <inputColumn
                           refId="Package\Load Fact Table\Load FactSales\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ShipDate_SK]"
                           cachedDataType="i4"
@@ -3258,7 +3398,7 @@ where [refTable].[Date] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- Script written by Xiao Li, Dingyu Liang, Siyu Pei
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">-- Script written by Xiao Li, Dingyu Liang, Siyu Pei
 -- Script query to load the Fact Table
 SELECT  
 	dbo.[Order].OrderID AS OrderID_DD,
@@ -3726,7 +3866,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{60DF69FB-2483-4A7C-A28E-A11771F66EF0}"
-              SQLTask:SqlStatementSource="-- CoffeeMerchantDM database developed&#xA;-- Written by Siyu Pei, Xiao Li, Dingyu Liang&#xA;-- Originally Written: January 2018&#xA;---------------------------------------------------------------------------------------&#xA;IF NOT EXISTS(SELECT * FROM sys.databases&#xA;&#x9;WHERE name = N'CoffeeMerchantDM')&#xA;&#x9;CREATE DATABASE CoffeeMerchantDM&#xA;GO&#xA;USE CoffeeMerchantDM&#xA;&#xA;--&#xA;-- Delete existing tables&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'FactSales'&#xA;       )&#xA;&#x9;DROP TABLE FactSales;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimProduct'&#xA;       )&#xA;&#x9;DROP TABLE DimProduct;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimEmployee'&#xA;       )&#xA;&#x9;DROP TABLE DimEmployee;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimDate'&#xA;       )&#xA;&#x9;DROP TABLE DimDate;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimRegion'&#xA;       )&#xA;&#x9;DROP TABLE DimRegion;&#xA;--&#xA;-- Create tables&#xA;--&#xA;CREATE TABLE DimRegion&#xA;&#x9;(Region_SK   INT IDENTITY(1,1) CONSTRAINT pk_dimregion PRIMARY KEY,&#xA;&#x9;Region_AK    NVARCHAR(2) NOT NULL,&#xA;&#x9;State        NVARCHAR(25) NOT NULL CONSTRAINT un_dimregion_state UNIQUE,&#xA;&#x9;City         NVARCHAR(50) NOT NULL&#xA;&#x9;);&#xA;&#xA;--&#xA;CREATE TABLE DimEmployee&#xA;&#x9;(Employee_SK    INT IDENTITY(1,1) CONSTRAINT pk_dimemployee PRIMARY KEY,&#xA;    Employee_AK     INT NOT NULL,&#xA;&#x9;First_Name      NVARCHAR(30) NOT NULL,&#xA;&#x9;Last_Name       NVARCHAR(30) NOT NULL,&#xA;&#x9;Commission_Rate NUMERIC(4,4) NOT NULL,&#xA;&#x9;Hire_Date       DATETIME NOT NULL,&#xA;&#x9;Birth_Date      DATETIME NOT NULL,&#xA;&#x9;Gender          NVARCHAR(1) NOT NULL &#xA;&#x9;);&#xA;--&#xA;CREATE TABLE DimProduct&#xA;&#x9;(Product_SK&#x9;       INT IDENTITY(1,1) CONSTRAINT pk_dimproduct PRIMARY KEY,&#xA;&#x9;Product_AK           INT NOT NULL,&#xA;&#x9;Item_Name&#x9;       NVARCHAR(40) NOT NULL,&#xA;&#x9;Item_Type&#x9;       NVARCHAR(5) NOT NULL,&#xA;&#x9;Country_of_Origin&#x9;NVARCHAR(40) NOT NULL&#xA;&#x9;);&#xA;--&#xA;CREATE TABLE DimDate&#xA;&#x9;(Date_SK       INT IDENTITY(1,1) CONSTRAINT pk_dimdate PRIMARY KEY,&#xA;&#x9;Date           DATETIME NOT NULL,&#xA;&#x9;Day_of_Week    NVARCHAR(50) NOT NULL,&#xA;&#x9;Date_Name      NVARCHAR(50) NOT NULL,&#xA;&#x9;Month          INT NOT NULL,&#xA;&#x9;Month_Name     NVARCHAR(50) NOT NULL,&#xA;&#x9;Day_of_Month   INT NOT NULL,&#xA;&#x9;Quarter&#x9;       INT NOT NULL,&#xA;&#x9;Season&#x9;&#x9;   NVARCHAR(50) NOT NULL,&#xA;&#x9;Year&#x9;&#x9;   INT NOT NULL,&#xA;&#x9;HolidayFlag&#x9;   NVARCHAR(1) NOT NULL,&#xA;&#x9;Holiday_Name   NVARCHAR(100)&#xA;);&#xA;&#xA;--&#xA;CREATE TABLE FactSales&#xA;&#x9;(Product_SK  INT CONSTRAINT fk_factsales_dimproduct_sk FOREIGN KEY REFERENCES DimProduct(Product_SK),&#xA;        Employee_SK INT CONSTRAINT fk_factsales_dimemployee_sk FOREIGN KEY REFERENCES DimEmployee(Employee_SK),&#xA;        Region_SK  INT CONSTRAINT fk_factsales_dimregion_sk FOREIGN KEY REFERENCES DimRegion(Region_SK),&#xA;&#x9;&#x9;Order_ID INT,&#xA;        Order_Date INT NOT NULL CONSTRAINT fk_factsales_orderdate FOREIGN KEY REFERENCES DimDate(Date_SK),&#xA;        Ship_Date  INT NOT NULL CONSTRAINT fk_factsales_shipdate FOREIGN KEY REFERENCES DimDate(Date_SK),&#xA;        Sales_Quantity INT NOT NULL,&#xA;        Full_Price NUMERIC(6,2) NOT NULL,&#xA;        Cost NUMERIC(6,2) NOT NULL,&#xA;        Discount NUMERIC(4,4) NOT NULL,&#xA;        Inventory_On_Hand INT NOT NULL,&#xA;        Tax_Rate NUMERIC(7,4) NOT NULL,&#xA;&#x9;&#x9;CONSTRAINT pk_factsales PRIMARY KEY (Order_ID, Product_SK, Employee_SK, Region_SK)&#xA;);&#xA; --End of the OLAP file.&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="-- CoffeeMerchantDM database developed&#xA;-- Written by Siyu Pei, Xiao Li, Dingyu Liang&#xA;-- Originally Written: January 2018&#xA;---------------------------------------------------------------------------------------&#xA;IF NOT EXISTS(SELECT * FROM sys.databases&#xA;&#x9;WHERE name = N'CoffeeMerchantDM')&#xA;&#x9;CREATE DATABASE CoffeeMerchantDM&#xA;GO&#xA;USE CoffeeMerchantDM&#xA;&#xA;--&#xA;-- Delete existing tables&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'FactSales'&#xA;       )&#xA;&#x9;DROP TABLE FactSales;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimProduct'&#xA;       )&#xA;&#x9;DROP TABLE DimProduct;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimEmployee'&#xA;       )&#xA;&#x9;DROP TABLE DimEmployee;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimDate'&#xA;       )&#xA;&#x9;DROP TABLE DimDate;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimRegion'&#xA;       )&#xA;&#x9;DROP TABLE DimRegion;&#xA;--&#xA;-- Create tables&#xA;--&#xA;CREATE TABLE DimRegion&#xA;&#x9;(Region_SK   INT IDENTITY(1,1) CONSTRAINT pk_dimregion PRIMARY KEY,&#xA;&#x9;Region_AK    NVARCHAR(2) NOT NULL,&#xA;&#x9;State        NVARCHAR(25) NOT NULL,&#xA;&#x9;City         NVARCHAR(50) NOT NULL&#xA;&#x9;);&#xA;&#xA;--&#xA;CREATE TABLE DimEmployee&#xA;&#x9;(Employee_SK    INT IDENTITY(1,1) CONSTRAINT pk_dimemployee PRIMARY KEY,&#xA;    Employee_AK     INT NOT NULL,&#xA;&#x9;First_Name      NVARCHAR(30) NOT NULL,&#xA;&#x9;Last_Name       NVARCHAR(30) NOT NULL,&#xA;&#x9;Commission_Rate NUMERIC(4,4) NOT NULL,&#xA;&#x9;Hire_Date       DATETIME NOT NULL,&#xA;&#x9;Birth_Date      DATETIME NOT NULL,&#xA;&#x9;Gender          NVARCHAR(1) NOT NULL &#xA;&#x9;);&#xA;--&#xA;CREATE TABLE DimProduct&#xA;&#x9;(Product_SK&#x9;       INT IDENTITY(1,1) CONSTRAINT pk_dimproduct PRIMARY KEY,&#xA;&#x9;Product_AK           INT NOT NULL,&#xA;&#x9;Item_Name&#x9;       NVARCHAR(40) NOT NULL,&#xA;&#x9;Item_Type&#x9;       NVARCHAR(5) NOT NULL,&#xA;&#x9;Country_of_Origin&#x9;NVARCHAR(40) NOT NULL&#xA;&#x9;);&#xA;--&#xA;CREATE TABLE [dbo].[DimDate]&#xA;&#x9;(&#x9;&#xA;&#x9;Date_SK INT PRIMARY KEY, &#xA;&#x9;Date DATETIME,&#xA;&#x9;FullDate CHAR(10),-- Date in MM-dd-yyyy format&#xA;&#x9;DayOfMonth INT, -- Field will hold day number of Month&#xA;&#x9;DayName VARCHAR(9), -- Contains name of the day, Sunday, Monday &#xA;&#x9;DayOfWeek INT,-- First Day Sunday=1 and Saturday=7&#xA;&#x9;DayOfWeekInMonth INT, -- 1st Monday or 2nd Monday in Month&#xA;&#x9;DayOfWeekInYear INT,&#xA;&#x9;DayOfQuarter INT,&#xA;&#x9;DayOfYear INT,&#xA;&#x9;WeekOfMonth INT,-- Week Number of Month &#xA;&#x9;WeekOfQuarter INT, -- Week Number of the Quarter&#xA;&#x9;WeekOfYear INT,-- Week Number of the Year&#xA;&#x9;Month INT, -- Number of the Month 1 to 12{}&#xA;&#x9;MonthName VARCHAR(9),-- January, February etc&#xA;&#x9;MonthOfQuarter INT,-- Month Number belongs to Quarter&#xA;&#x9;Quarter CHAR(2),&#xA;&#x9;QuarterName VARCHAR(9),-- First,Second..&#xA;&#x9;Year INT,-- Year value of Date stored in Row&#xA;&#x9;YearName CHAR(7), -- CY 2015,CY 2016&#xA;&#x9;MonthYear CHAR(10), -- Jan-2016,Feb-2016&#xA;&#x9;MMYYYY INT,&#xA;&#x9;FirstDayOfMonth DATE,&#xA;&#x9;LastDayOfMonth DATE,&#xA;&#x9;FirstDayOfQuarter DATE,&#xA;&#x9;LastDayOfQuarter DATE,&#xA;&#x9;FirstDayOfYear DATE,&#xA;&#x9;LastDayOfYear DATE,&#xA;&#x9;IsHoliday BIT,-- Flag 1=National Holiday, 0-No National Holiday&#xA;&#x9;IsWeekday BIT,-- 0=Week End ,1=Week Day&#xA;&#x9;Holiday VARCHAR(50),--Name of Holiday in US&#xA;&#x9;Season VARCHAR(10)--Name of Season&#xA;&#x9;);&#xA;--&#xA;CREATE TABLE FactSales&#xA;&#x9;(Product_SK  INT CONSTRAINT fk_factsales_dimproduct_sk FOREIGN KEY REFERENCES DimProduct(Product_SK),&#xA;        Employee_SK INT CONSTRAINT fk_factsales_dimemployee_sk FOREIGN KEY REFERENCES DimEmployee(Employee_SK),&#xA;        Region_SK  INT CONSTRAINT fk_factsales_dimregion_sk FOREIGN KEY REFERENCES DimRegion(Region_SK),&#xA;&#x9;&#x9;Order_ID INT,&#xA;        Order_Date INT NOT NULL CONSTRAINT fk_factsales_orderdate FOREIGN KEY REFERENCES DimDate(Date_SK),&#xA;        Ship_Date  INT NOT NULL CONSTRAINT fk_factsales_shipdate FOREIGN KEY REFERENCES DimDate(Date_SK),&#xA;        Sales_Quantity INT NOT NULL,&#xA;        Full_Price NUMERIC(6,2) NOT NULL,&#xA;        Cost NUMERIC(6,2) NOT NULL,&#xA;        Discount NUMERIC(4,4) NOT NULL,&#xA;        Inventory_On_Hand INT NOT NULL,&#xA;        Tax_Rate NUMERIC(7,4) NOT NULL,&#xA;&#x9;&#x9;CONSTRAINT pk_factsales PRIMARY KEY (Order_ID, Product_SK, Employee_SK, Region_SK)&#xA;);&#xA; --End of the OLAP file.&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -3763,135 +3903,100 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="121.333333333334,42.6666666666667"
-          Id="Package\Prepare ETL\Build DM"
-          TopLeft="28.9999986837307,15.2666649154823" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="207.333333333334,87.3333333333334"
-          Size="207.333333333334,130.666666666667"
-          Id="Package\Prepare ETL"
-          TopLeft="94.166665263474,13.8666664187113" />
-        <NodeLayout
           Size="146.666666666667,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimDate"
-          TopLeft="30.3333314706882,15.1333286996683" />
-        <NodeLayout
-          Size="160,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimProduct"
-          TopLeft="30.3333317687115,85.799995366335" />
-        <EdgeLayout
-          Id="Package\Load Dim Tables.PrecedenceConstraints[Constraint]"
-          TopLeft="106.999998286367,57.799995366335">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28"
-              Start="0,0"
-              End="0,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.9932421875,5.47314453124999,35.986484375,9.5537109375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="156,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimRegion"
-          TopLeft="31.1666650896271,162.06666159908" />
-        <EdgeLayout
-          Id="Package\Load Dim Tables.PrecedenceConstraints[Constraint 1]"
-          TopLeft="109.749998429169,128.466662033002">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.5999995660783"
-              Start="0,0"
-              End="0,26.0999995660783">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.0999995660783" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.9932421875,8.27314431428916,35.986484375,9.5537109375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="52.8333311354121,19.4666619555156" />
         <NodeLayout
           Size="169.333333333334,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimEmployee"
-          TopLeft="25.3333318432173,240.599994219542" />
+          TopLeft="42.6249982522181,179.06666198651" />
+        <NodeLayout
+          Size="160,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimProduct"
+          TopLeft="46.9999981870254,93.5999952268602" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimRegion"
+          TopLeft="54.2916647450378,259.566659855644" />
         <EdgeLayout
-          Id="Package\Load Dim Tables.PrecedenceConstraints[Constraint 2]"
-          TopLeft="109.583331799756,204.733328265747">
+          Id="Package\Load Dim Tables.PrecedenceConstraints[Constraint]"
+          TopLeft="126.583331327885,62.1333286221823">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.866665953795"
+              EndConnector="0,31.4666666046779"
               Start="0,0"
-              End="0,28.366665953795">
+              End="0,23.9666666046779">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.366665953795" />
+                    End="0,23.9666666046779" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.9932421875,9.40647750814752,35.986484375,9.5537109375"
+              BoundingBox="-17.9932421875,7.20647783358895,35.986484375,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim Tables.PrecedenceConstraints[Constraint 1]"
+          TopLeft="127.145831552955,136.266661893527">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.8000000929836"
+              Start="0,0"
+              End="0,35.3000000929836">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.3000000929836" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.9932421875,12.8731445777418,35.986484375,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim Tables.PrecedenceConstraints[Constraint 2]"
+          TopLeft="129.791664831961,221.733328653177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.8333312024672"
+              Start="0,0"
+              End="0,30.3333312024672">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.3333312024672" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.9932421875,10.3898101324836,35.986484375,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="253.333333333334,335.333333333334"
-          Size="253.333333333334,378.666666666667"
+          PanelSize="302.666666666667,353.333333333334"
+          Size="302.666666666667,396"
           Id="Package\Load Dim Tables"
-          TopLeft="74.9999988824129,200.199996420145" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="199.74999873961,144.533333085378">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55.666663334767"
-              Start="0,0"
-              End="0,48.166663334767">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.166663334767" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.9932421875,19.3064761986335,35.986484375,9.5537109375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="70.8333322778344,208.033330567082" />
         <NodeLayout
           Size="149.333333333334,42.6666666666667"
           Id="Package\Load Fact Table\Load FactSales"
@@ -3899,31 +4004,66 @@ INNER JOIN CoffeeMerchant.dbo.Employee
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="228.666666666667,149.333333333334"
+          PanelSize="228.666666666667,150"
           Size="228.666666666667,192.666666666667"
           Id="Package\Load Fact Table"
-          TopLeft="435.833326838911,296.033331806858" />
+          TopLeft="437.9166601412,305.42222052786" />
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Prepare ETL\Build DM"
+          TopLeft="30.0416653348753,14.1833316015205" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="207.333333333334,113.333333333334"
+          Size="207.333333333334,156"
+          Id="Package\Prepare ETL"
+          TopLeft="117.083331588656,13.8666664187113" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="328.333332215746,390.949997446835">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="221.458331933245,169.866666418711">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="107.499994623164,0"
+              EndConnector="0,38.1666641483704"
               Start="0,0"
-              End="99.9999946231645,0">
+              End="0,30.6666641483704">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="99.9999946231645,0" />
+                    End="0,30.6666641483704" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="32.0067551240822,5,35.986484375,9.5537109375"
+              BoundingBox="-17.9932421875,10.5564766054352,35.986484375,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="373.499998944501,403.894442214138">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="64.4166611966992,0"
+              Start="0,0"
+              End="56.9166611966992,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.9166611966992,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="10.4650884108496,5,35.986484375,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3931,18 +4071,217 @@ INNER JOIN CoffeeMerchant.dbo.Employee
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Load Dim Tables\Load DimEmployee">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\OLE DB Command"
+          TopLeft="230.166666666667,210.833333333334" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\Insert Destination"
+          TopLeft="5.50000000000006,210.833333333334" />
+        <NodeLayout
+          Size="209.333333333334,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\Slowly Changing Dimension"
+          TopLeft="208.833333333333,108.166666666667" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\OLE DB Source"
+          TopLeft="238.166666666667,5.50000000000004" />
+        <EdgeLayout
+          Id="Package\Load Dim Tables\Load DimEmployee.Paths[New Output]"
+          TopLeft="279.944444444444,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-192.444444444444,60.0000000000001"
+              Start="0,0"
+              End="-192.444444444444,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2730720606827" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2730720606827"
+                    Point2="0,24.2730720606827"
+                    Point3="-4,24.2730720606827" />
+                  <mssgle:LineSegment
+                    End="-188.444444444444,24.2730720606827" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-188.444444444444,24.2730720606827"
+                    Point2="-192.444444444444,24.2730720606827"
+                    Point3="-192.444444444444,28.2730720606827" />
+                  <mssgle:LineSegment
+                    End="-192.444444444444,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-123.313608940972,29.2730720606827,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim Tables\Load DimEmployee.Paths[Changing Attribute Updates Output]"
+          TopLeft="347.055555555556,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.5555555555555,60.0000000000001"
+              Start="0,0"
+              End="-33.5555555555555,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2730720606827" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2730720606827"
+                    Point2="0,24.2730720606827"
+                    Point3="-4,24.2730720606827" />
+                  <mssgle:LineSegment
+                    End="-29.5555555555555,24.2730720606827" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.5555555555555,24.2730720606827"
+                    Point2="-33.5555555555555,24.2730720606827"
+                    Point3="-33.5555555555555,28.2730720606827" />
+                  <mssgle:LineSegment
+                    End="-33.5555555555555,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-95.3116840277778,29.2730720606827,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim Tables\Load DimEmployee.Paths[OLE DB Source Output]"
+          TopLeft="313.5,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dim Tables\Load DimEmployee\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{81D426A0-ED3F-418D-8415-BE3E228C57AE}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[DimEmployee]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Birth_Date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Birth_Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Commission_Rate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Commission_Rate&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Employee_AK]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Employee_AK&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[First_Name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;First_Name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Gender&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Hire_Date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Hire_Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Last_Name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Last_Name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dim Tables\Load DimEmployee\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Load Dim Tables\Load DimProduct">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimProduct\OLE DB Source"
-          TopLeft="238.166666666667,5.50000000000004" />
-        <NodeLayout
           Size="209.333333333334,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimProduct\Slowly Changing Dimension"
           TopLeft="208.833333333333,108.166666666667" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimProduct\OLE DB Source"
+          TopLeft="238.166666666667,5.50000000000004" />
         <EdgeLayout
           Id="Package\Load Dim Tables\Load DimProduct.Paths[OLE DB Source Output]"
           TopLeft="313.5,48.1666666666667">
@@ -3962,7 +4301,9 @@ INNER JOIN CoffeeMerchant.dbo.Employee
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -4049,14 +4390,6 @@ INNER JOIN CoffeeMerchant.dbo.Employee
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Dim Tables\Load DimProduct\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load Dim Tables\Load DimProduct\Slowly Changing Dimension">
     <Properties>
       <Property>
@@ -4111,6 +4444,14 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dim Tables\Load DimProduct\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load Dim Tables\Load DimRegion">
     <LayoutInfo>
@@ -4119,135 +4460,13 @@ INNER JOIN CoffeeMerchant.dbo.Employee
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimRegion\OLE DB Source"
-          TopLeft="34.8333333333334,5.50000000000004" />
-        <NodeLayout
-          Size="209.333333333334,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimRegion\Slowly Changing Dimension"
-          TopLeft="5.50000000000003,108.166666666667" />
-        <EdgeLayout
-          Id="Package\Load Dim Tables\Load DimRegion.Paths[OLE DB Source Output]"
-          TopLeft="110.166666666667,48.1666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimRegion\Insert Destination"
-          TopLeft="28.1666666666667,210.833333333334" />
-        <EdgeLayout
-          Id="Package\Load Dim Tables\Load DimRegion.Paths[New Output]"
-          TopLeft="110.166666666667,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.09138671875,20.533203125,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Dim Tables\Load DimRegion\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Dim Tables\Load DimRegion\Slowly Changing Dimension">
-    <Properties>
-      <Property>
-        <Name>SCDMetadata</Name>
-        <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{81D426A0-ED3F-418D-8415-BE3E228C57AE}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[dbo].[DimRegion]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[City]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;City&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Region_AK]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Region_AK&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[State]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;State&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn /&gt;
-  &lt;EndDateColumn /&gt;
-  &lt;DateVariable /&gt;
-  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Load Dim Tables\Load DimEmployee">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimEmployee\OLE DB Source"
           TopLeft="238.166666666667,5.50000000000004" />
         <NodeLayout
           Size="209.333333333334,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimEmployee\Slowly Changing Dimension"
+          Id="Package\Load Dim Tables\Load DimRegion\Slowly Changing Dimension"
           TopLeft="208.833333333333,108.166666666667" />
         <EdgeLayout
-          Id="Package\Load Dim Tables\Load DimEmployee.Paths[OLE DB Source Output]"
+          Id="Package\Load Dim Tables\Load DimRegion.Paths[OLE DB Source Output]"
           TopLeft="313.5,48.1666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4265,15 +4484,17 @@ INNER JOIN CoffeeMerchant.dbo.Employee
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="164,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimEmployee\Insert Destination"
+          Id="Package\Load Dim Tables\Load DimRegion\Insert Destination"
           TopLeft="5.50000000000006,210.833333333334" />
         <EdgeLayout
-          Id="Package\Load Dim Tables\Load DimEmployee.Paths[New Output]"
+          Id="Package\Load Dim Tables\Load DimRegion.Paths[New Output]"
           TopLeft="279.944444444444,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4304,16 +4525,16 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-123.313608940972,29.2730720606827,54.1827734375,11.43359375"
+              BoundingBox="-132.182261284722,29.2730720606827,71.920078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="166.666666666667,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimEmployee\OLE DB Command"
+          Id="Package\Load Dim Tables\Load DimRegion\OLE DB Command"
           TopLeft="230.166666666667,210.833333333334" />
         <EdgeLayout
-          Id="Package\Load Dim Tables\Load DimEmployee.Paths[Changing Attribute Updates Output]"
+          Id="Package\Load Dim Tables\Load DimRegion.Paths[Changing Attribute Updates Output]"
           TopLeft="347.055555555556,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4344,7 +4565,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-95.3116840277778,29.2730720606827,157.0678125,11.6630859375"
+              BoundingBox="-103.972816840278,29.2730720606827,174.390078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4352,15 +4573,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Dim Tables\Load DimEmployee\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Dim Tables\Load DimEmployee\Slowly Changing Dimension">
+    design-time-name="Package\Load Dim Tables\Load DimRegion\Slowly Changing Dimension">
     <Properties>
       <Property>
         <Name>SCDMetadata</Name>
@@ -4368,47 +4581,23 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;ConnectionID&gt;{81D426A0-ED3F-418D-8415-BE3E228C57AE}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[dbo].[DimEmployee]&lt;/TableName&gt;
+  &lt;TableName&gt;[dbo].[DimRegion]&lt;/TableName&gt;
   &lt;InputToColumnsCollection&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Birth_Date]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Birth_Date&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Commission_Rate]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Commission_Rate&lt;/ColumnName&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[City]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;City&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Employee_AK]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Employee_AK&lt;/ColumnName&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Region_AK]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Region_AK&lt;/ColumnName&gt;
       &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
       &lt;ChangeType&gt;None&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[First_Name]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;First_Name&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Gender&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Hire_Date]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Hire_Date&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Last_Name]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Last_Name&lt;/ColumnName&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[State]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;State&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
@@ -4432,6 +4621,14 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dim Tables\Load DimRegion\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load Fact Table\Load FactSales">
     <LayoutInfo>
@@ -4442,9 +4639,29 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           Id="Package\Load Fact Table\Load FactSales\OLE DB Source"
           TopLeft="170.666666666667,20.6666666666667" />
         <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Load Fact Table\Load FactSales\LKP-OrderDateKey"
+          TopLeft="151.166666977108,342.333333100875" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Load Fact Table\Load FactSales\LKP-Region_SK"
+          TopLeft="167.5,261.666666666667" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Load Fact Table\Load FactSales\OLE DB Destination"
+          TopLeft="155,515.916666724782" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Load Fact Table\Load FactSales\LKP-Employee_SK"
+          TopLeft="155.333333333333,177.333333333333" />
+        <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Load Fact Table\Load FactSales\LKP-Product_SK"
           TopLeft="167.333333333333,98.6666666666667" />
+        <NodeLayout
+          Size="160,42.6666666666667"
+          Id="Package\Load Fact Table\Load FactSales\LKP-ShipDateKey"
+          TopLeft="159.166666666667,429.166666666667" />
         <EdgeLayout
           Id="Package\Load Fact Table\Load FactSales.Paths[OLE DB Source Output]"
           TopLeft="245.333333333333,63.3333333333333">
@@ -4467,38 +4684,66 @@ INNER JOIN CoffeeMerchant.dbo.Employee
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Load Fact Table\Load FactSales\LKP-Employee_SK"
-          TopLeft="155.333333333333,177.333333333333" />
         <EdgeLayout
-          Id="Package\Load Fact Table\Load FactSales.Paths[Lookup Match Output]"
-          TopLeft="241,141.333333333333">
+          Id="Package\Load Fact Table\Load FactSales.Paths[Lookup Match Output3]"
+          TopLeft="236.833333488554,384.999999767542">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36"
+              EndConnector="0,44.1666668991255"
               Start="0,0"
-              End="0,28.5">
+              End="0,36.6666668991255">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5" />
+                    End="0,36.6666668991255" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,8.44531250000001,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,12.5286459495627,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="152,42.6666666666667"
-          Id="Package\Load Fact Table\Load FactSales\LKP-Region_SK"
-          TopLeft="167.5,261.666666666667" />
+        <EdgeLayout
+          Id="Package\Load Fact Table\Load FactSales.Paths[Lookup Match Output2]"
+          TopLeft="243.5,304.333333333334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.99999968955916,37.9999997675412"
+              Start="0,0"
+              End="-8.99999968955916,30.4999997675412">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9999998837706" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9999998837706"
+                    Point2="0,18.9999998837706"
+                    Point3="-4,18.9999998837706" />
+                  <mssgle:LineSegment
+                    End="-4.99999968955916,18.9999998837706" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.99999968955916,18.9999998837706"
+                    Point2="-8.99999968955916,18.9999998837706"
+                    Point3="-8.99999968955916,22.9999998837706" />
+                  <mssgle:LineSegment
+                    End="-8.99999968955916,30.4999997675412" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-52.6913865635296,23.9999998837706,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Fact Table\Load FactSales.Paths[Lookup Match Output1]"
           TopLeft="240.416666666667,220">
@@ -4523,87 +4768,51 @@ INNER JOIN CoffeeMerchant.dbo.Employee
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Load Fact Table\Load FactSales\LKP-OrderDateKey"
-          TopLeft="161.666666666667,348.333333333333" />
         <EdgeLayout
-          Id="Package\Load Fact Table\Load FactSales.Paths[Lookup Match Output2]"
-          TopLeft="244.25,304.333333333333">
+          Id="Package\Load Fact Table\Load FactSales.Paths[Lookup Match Output]"
+          TopLeft="241,141.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.9999999999999"
+              EndConnector="0,36"
               Start="0,0"
-              End="0,36.4999999999999">
+              End="0,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.4999999999999" />
+                    End="0,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,12.4453125,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,8.44531250000001,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="160,42.6666666666667"
-          Id="Package\Load Fact Table\Load FactSales\LKP-ShipDateKey"
-          TopLeft="159.166666666667,429.166666666667" />
-        <EdgeLayout
-          Id="Package\Load Fact Table\Load FactSales.Paths[Lookup Match Output3]"
-          TopLeft="242.083333333333,391">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.1666666666667"
-              Start="0,0"
-              End="0,30.6666666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.6666666666667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,9.52864583333334,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="172,42.6666666666667"
-          Id="Package\Load Fact Table\Load FactSales\OLE DB Destination"
-          TopLeft="155,519.166666666667" />
         <EdgeLayout
           Id="Package\Load Fact Table\Load FactSales.Paths[Lookup Match Output4]"
-          TopLeft="240.083333333333,471.833333333333">
+          TopLeft="240.083333333333,471.833333333334">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.3333333333334"
+              EndConnector="0,44.0833333914478"
               Start="0,0"
-              End="0,39.8333333333334">
+              End="0,36.5833333914478">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.8333333333334" />
+                    End="0,36.5833333914478" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.1119791666667,96.3827734375,11.609375"
+              BoundingBox="-57.0600390625,10.2916666957239,114.120078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4613,75 +4822,6 @@ INNER JOIN CoffeeMerchant.dbo.Employee
   <PipelineComponentMetadata
     design-time-name="Package\Load Fact Table\Load FactSales\OLE DB Source">
     <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact Table\Load FactSales\LKP-Product_SK">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact Table\Load FactSales\LKP-Employee_SK">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact Table\Load FactSales\LKP-Region_SK">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -4711,12 +4851,12 @@ INNER JOIN CoffeeMerchant.dbo.Employee
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Fact Table\Load FactSales\LKP-ShipDateKey">
+    design-time-name="Package\Load Fact Table\Load FactSales\LKP-Region_SK">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4726,7 +4866,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4743,6 +4883,75 @@ INNER JOIN CoffeeMerchant.dbo.Employee
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact Table\Load FactSales\LKP-Employee_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact Table\Load FactSales\LKP-Product_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact Table\Load FactSales\LKP-ShipDateKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
