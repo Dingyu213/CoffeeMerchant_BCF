@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Coffee Merchant ETL"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{1DC74F09-0748-4705-B813-C55C878EAC58}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{7EDEE41C-C7DE-4973-A39C-18AEF059BBE6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3905,22 +3905,22 @@ INNER JOIN CoffeeMerchant.dbo.Employee
         <NodeLayout
           Size="146.666666666667,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimDate"
-          TopLeft="52.8333311354121,19.4666619555156" />
+          TopLeft="78.8749974140277,33.5499950370193" />
         <NodeLayout
           Size="169.333333333334,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimEmployee"
-          TopLeft="42.6249982522181,179.06666198651" />
+          TopLeft="68.6666645308337,193.149995068014" />
         <NodeLayout
           Size="160,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimProduct"
-          TopLeft="46.9999981870254,93.5999952268602" />
+          TopLeft="73.041664465641,107.683328308364" />
         <NodeLayout
           Size="156,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimRegion"
-          TopLeft="54.2916647450378,259.566659855644" />
+          TopLeft="80.3333310236534,273.649992937148" />
         <EdgeLayout
           Id="Package\Load Dim Tables.PrecedenceConstraints[Constraint]"
-          TopLeft="126.583331327885,62.1333286221823">
+          TopLeft="152.624997606501,76.216661703686">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3938,13 +3938,13 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.9932421875,7.20647783358895,35.986484375,9.5537109375"
+              BoundingBox="-17.9932421875,7.20647783358896,35.986484375,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Dim Tables.PrecedenceConstraints[Constraint 1]"
-          TopLeft="127.145831552955,136.266661893527">
+          TopLeft="153.18749783157,150.349994975031">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3968,7 +3968,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Dim Tables.PrecedenceConstraints[Constraint 2]"
-          TopLeft="129.791664831961,221.733328653177">
+          TopLeft="155.833331110577,235.816661734681">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3993,10 +3993,10 @@ INNER JOIN CoffeeMerchant.dbo.Employee
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="302.666666666667,353.333333333334"
-          Size="302.666666666667,396"
+          PanelSize="302.666666666667,371.333333333334"
+          Size="302.666666666667,414"
           Id="Package\Load Dim Tables"
-          TopLeft="70.8333322778344,208.033330567082" />
+          TopLeft="399.999994039536,226.449996904433" />
         <NodeLayout
           Size="149.333333333334,42.6666666666667"
           Id="Package\Load Fact Table\Load FactSales"
@@ -4004,66 +4004,66 @@ INNER JOIN CoffeeMerchant.dbo.Employee
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="228.666666666667,150"
-          Size="228.666666666667,192.666666666667"
+          PanelSize="234,109.333333333334"
+          Size="234,152"
           Id="Package\Load Fact Table"
-          TopLeft="437.9166601412,305.42222052786" />
+          TopLeft="767.083321902901,356.338886284066" />
         <NodeLayout
           Size="121.333333333334,42.6666666666667"
           Id="Package\Prepare ETL\Build DM"
-          TopLeft="30.0416653348753,14.1833316015205" />
+          TopLeft="42.5416651486108,26.0999980551006" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="207.333333333334,113.333333333334"
-          Size="207.333333333334,156"
+          PanelSize="207.333333333334,115.333333333334"
+          Size="207.333333333334,158"
           Id="Package\Prepare ETL"
-          TopLeft="117.083331588656,13.8666664187113" />
+          TopLeft="446.249993350357,9.53333316286404" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="221.458331933245,169.866666418711">
+          TopLeft="550.624993694946,167.533333162864">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.1666641483704"
+              EndConnector="0,58.916663741569"
               Start="0,0"
-              End="0,30.6666641483704">
+              End="0,51.416663741569">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.6666641483704" />
+                    End="0,51.416663741569" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.9932421875,10.5564766054352,35.986484375,9.5537109375"
+              BoundingBox="-17.9932421875,20.9314764020345,35.986484375,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="373.499998944501,403.894442214138">
+          TopLeft="702.666660706202,432.894441594249">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="64.4166611966992,0"
+              EndConnector="64.4166611966988,0"
               Start="0,0"
-              End="56.9166611966992,0">
+              End="56.9166611966988,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="56.9166611966992,0" />
+                    End="56.9166611966988,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="10.4650884108496,5,35.986484375,9.5537109375"
+              BoundingBox="10.4650884108494,5,35.986484375,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4183,7 +4183,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-8,18.2500000000001,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4312,7 +4312,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8,18.25,16,16"
+              BoundingBox="-8,18.2500000000001,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4507,7 +4507,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-132.182261284722,29.2730720606827,71.920078125,16"
+              BoundingBox="-123.313608940972,29.2730720606827,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4543,7 +4543,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-103.972816840278,29.2730720606827,174.390078125,16"
+              BoundingBox="-95.3116840277778,29.2730720606827,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4567,7 +4567,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8,18.25,16,16"
+              BoundingBox="-8,18.2500000000001,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4683,7 +4683,9 @@ INNER JOIN CoffeeMerchant.dbo.Employee
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4823,7 +4825,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4928,7 +4930,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4938,7 +4940,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
