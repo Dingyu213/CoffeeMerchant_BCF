@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Coffee Merchant ETL"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{7EDEE41C-C7DE-4973-A39C-18AEF059BBE6}">
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{A3E5676A-30DD-41E1-AC09-19AC6D823E01}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -80,6 +80,154 @@
             <pipeline
               version="1">
               <components>
+                <component
+                  refId="Package\Load Dim Tables\Load DimEmployee\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load Dim Tables\Load DimEmployee\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Dim Tables\Load DimEmployee\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Load Dim Tables\Load DimEmployee\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Derived Column.Outputs[Derived Column Output].Columns[EndDate]"
+                          dataType="dbTimeStamp"
+                          description="EndDate"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Derived Column.Outputs[Derived Column Output].Columns[EndDate]"
+                          name="EndDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load Dim Tables\Load DimEmployee\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Load Dim Tables\Load DimEmployee\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column 1"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1.Outputs[Derived Column Output].Columns[StartDate]"
+                          dataType="dbTimeStamp"
+                          description="StartDate"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1.Outputs[Derived Column Output].Columns[StartDate]"
+                          name="StartDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
                 <component
                   refId="Package\Load Dim Tables\Load DimEmployee\Insert Destination"
                   componentClassID="Microsoft.OLEDBDestination"
@@ -157,21 +305,21 @@
                           cachedDataType="i4"
                           cachedName="Employee_AK"
                           externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Employee_AK]"
-                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Employee_AK]" />
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Employee_AK]" />
                         <inputColumn
                           refId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].Columns[First_Name]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="First_Name"
                           externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[First_Name]"
-                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[First_Name]" />
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[First_Name]" />
                         <inputColumn
                           refId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].Columns[Last_Name]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="Last_Name"
                           externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Last_Name]"
-                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Last_Name]" />
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Last_Name]" />
                         <inputColumn
                           refId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].Columns[Commission_Rate]"
                           cachedDataType="numeric"
@@ -179,26 +327,32 @@
                           cachedPrecision="4"
                           cachedScale="4"
                           externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Commission_Rate]"
-                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Commission_Rate]" />
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Commission_Rate]" />
                         <inputColumn
                           refId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].Columns[Hire_Date]"
                           cachedDataType="dbTimeStamp"
                           cachedName="Hire_Date"
                           externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Hire_Date]"
-                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Hire_Date]" />
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Hire_Date]" />
                         <inputColumn
                           refId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].Columns[Birth_Date]"
                           cachedDataType="dbTimeStamp"
                           cachedName="Birth_Date"
                           externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Birth_Date]"
-                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Birth_Date]" />
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Birth_Date]" />
                         <inputColumn
                           refId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].Columns[Gender]"
                           cachedDataType="wstr"
                           cachedLength="1"
                           cachedName="Gender"
                           externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
-                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]" />
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Gender]" />
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].Columns[StartDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="StartDate"
+                          externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1.Outputs[Derived Column Output].Columns[StartDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -239,6 +393,14 @@
                           dataType="wstr"
                           length="1"
                           name="Gender" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                          dataType="dbTimeStamp"
+                          name="StartDate" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
+                          dataType="dbTimeStamp"
+                          name="EndDate" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -285,7 +447,7 @@
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimEmployee] SET [Commission_Rate] = ?,[Gender] = ?,[Last_Name] = ? WHERE [Employee_AK] = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimEmployee] SET [EndDate] = ? WHERE [Employee_AK] = ? AND [EndDate] IS NULL</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -308,77 +470,35 @@
                       name="OLE DB Command Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].Columns[Commission_Rate]"
-                          cachedDataType="numeric"
-                          cachedName="Commission_Rate"
-                          cachedPrecision="4"
-                          cachedScale="4"
-                          externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Commission_Rate]" />
-                        <inputColumn
                           refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].Columns[Employee_AK]"
                           cachedDataType="i4"
                           cachedName="Employee_AK"
-                          externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Employee_AK]" />
                         <inputColumn
-                          refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].Columns[Gender]"
-                          cachedDataType="wstr"
-                          cachedLength="1"
-                          cachedName="Gender"
-                          externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]" />
-                        <inputColumn
-                          refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].Columns[Last_Name]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
-                          cachedName="Last_Name"
-                          externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Last_Name]" />
+                          refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].Columns[EndDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="EndDate"
+                          externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Derived Column.Outputs[Derived Column Output].Columns[EndDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          dataType="numeric"
-                          name="Param_0"
-                          precision="4"
-                          scale="4">
+                          dataType="dbTimeStamp"
+                          name="Param_0">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
+                              name="DBParamInfoFlags">65</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          dataType="wstr"
-                          length="1"
-                          name="Param_1">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          dataType="wstr"
-                          length="30"
-                          name="Param_2">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           dataType="i4"
-                          name="Param_3">
+                          name="Param_1">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -414,6 +534,120 @@
                           refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command 1"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimEmployee] SET [Gender] = ? WHERE [Employee_AK] = ? AND [EndDate] IS NULL</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.CoffeeMerchantDM]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.CoffeeMerchantDM]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Employee_AK]"
+                          cachedDataType="i4"
+                          cachedName="Employee_AK"
+                          externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Employee_AK]" />
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Gender]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="Gender"
+                          externalMetadataColumnId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="wstr"
+                          length="1"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="i4"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -670,11 +904,11 @@ ORDER BY Employee_AK</property>
                       dataType="System.String"
                       description="Specifies the SELECT statement used to create a schema rowset."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Birth_Date], [Commission_Rate], [Employee_AK], [First_Name], [Gender], [Hire_Date], [Last_Name] FROM [dbo].[DimEmployee]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Birth_Date], [Commission_Rate], [Employee_AK], [First_Name], [Gender], [Hire_Date], [Last_Name],[StartDate],[EndDate] FROM [dbo].[DimEmployee]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
-                      name="CurrentRowWhere"></property>
+                      name="CurrentRowWhere">[StartDate] IS NOT NULL AND [EndDate] IS NULL</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
@@ -743,7 +977,7 @@ ORDER BY Employee_AK</property>
                             <property
                               dataType="System.Int32"
                               name="ColumnType"
-                              typeConverter="ColumnType">2</property>
+                              typeConverter="ColumnType">3</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -811,7 +1045,7 @@ ORDER BY Employee_AK</property>
                             <property
                               dataType="System.Int32"
                               name="ColumnType"
-                              typeConverter="ColumnType">2</property>
+                              typeConverter="ColumnType">3</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -850,6 +1084,14 @@ ORDER BY Employee_AK</property>
                           dataType="wstr"
                           length="30"
                           name="Last_Name" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[StartDate]"
+                          dataType="dbTimeStamp"
+                          name="StartDate" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[EndDate]"
+                          dataType="dbTimeStamp"
+                          name="EndDate" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -904,23 +1146,321 @@ ORDER BY Employee_AK</property>
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\Load Dim Tables\Load DimEmployee\Union All"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+                  name="Union All"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 1]"
+                      name="Union All Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 1].Columns[Employee_AK]"
+                          cachedDataType="i4"
+                          cachedName="Employee_AK"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Employee_AK]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Employee_AK]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 1].Columns[Gender]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="Gender"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Gender]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 1].Columns[First_Name]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="First_Name"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[First_Name]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[First_Name]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 1].Columns[Last_Name]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="Last_Name"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Last_Name]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Last_Name]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 1].Columns[Hire_Date]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Hire_Date"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Hire_Date]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Hire_Date]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 1].Columns[Birth_Date]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Birth_Date"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Birth_Date]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Birth_Date]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 1].Columns[Commission_Rate]"
+                          cachedDataType="numeric"
+                          cachedName="Commission_Rate"
+                          cachedPrecision="4"
+                          cachedScale="4"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Commission_Rate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Commission_Rate]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 2].Columns[Employee_AK]"
+                          cachedDataType="i4"
+                          cachedName="Employee_AK"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Employee_AK]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Employee_AK]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 2].Columns[Gender]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="Gender"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Gender]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 2].Columns[First_Name]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="First_Name"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[First_Name]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[First_Name]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 2].Columns[Last_Name]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="Last_Name"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Last_Name]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Last_Name]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 2].Columns[Hire_Date]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Hire_Date"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Hire_Date]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Hire_Date]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 2].Columns[Birth_Date]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Birth_Date"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Birth_Date]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Birth_Date]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 2].Columns[Commission_Rate]"
+                          cachedDataType="numeric"
+                          cachedName="Commission_Rate"
+                          cachedPrecision="4"
+                          cachedScale="4"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[Commission_Rate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Commission_Rate]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 3]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 3">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1]"
+                      name="Union All Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Employee_AK]"
+                          dataType="i4"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Employee_AK]"
+                          name="Employee_AK" />
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Gender]"
+                          dataType="wstr"
+                          length="1"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Gender]"
+                          name="Gender" />
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[First_Name]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[First_Name]"
+                          name="First_Name" />
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Last_Name]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Last_Name]"
+                          name="Last_Name" />
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Hire_Date]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Hire_Date]"
+                          name="Hire_Date" />
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Birth_Date]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Birth_Date]"
+                          name="Birth_Date" />
+                        <outputColumn
+                          refId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Commission_Rate]"
+                          dataType="numeric"
+                          lineageId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1].Columns[Commission_Rate]"
+                          name="Commission_Rate"
+                          precision="4"
+                          scale="4" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
                   refId="Package\Load Dim Tables\Load DimEmployee.Paths[Changing Attribute Updates Output]"
-                  endId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input]"
+                  endId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1.Inputs[OLE DB Command Input]"
                   name="Changing Attribute Updates Output"
                   startId="Package\Load Dim Tables\Load DimEmployee\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
                 <path
-                  refId="Package\Load Dim Tables\Load DimEmployee.Paths[New Output]"
+                  refId="Package\Load Dim Tables\Load DimEmployee.Paths[Derived Column Output]"
+                  endId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Derived Column Output"
+                  startId="Package\Load Dim Tables\Load DimEmployee\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Load Dim Tables\Load DimEmployee.Paths[Derived Column Output1]"
                   endId="Package\Load Dim Tables\Load DimEmployee\Insert Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Load Dim Tables\Load DimEmployee.Paths[Historical Attribute Inserts Output]"
+                  endId="Package\Load Dim Tables\Load DimEmployee\Derived Column.Inputs[Derived Column Input]"
+                  name="Historical Attribute Inserts Output"
+                  startId="Package\Load Dim Tables\Load DimEmployee\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
+                <path
+                  refId="Package\Load Dim Tables\Load DimEmployee.Paths[New Output]"
+                  endId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 1]"
                   name="New Output"
                   startId="Package\Load Dim Tables\Load DimEmployee\Slowly Changing Dimension.Outputs[New Output]" />
+                <path
+                  refId="Package\Load Dim Tables\Load DimEmployee.Paths[OLE DB Command Output]"
+                  endId="Package\Load Dim Tables\Load DimEmployee\Union All.Inputs[Union All Input 2]"
+                  name="OLE DB Command Output"
+                  startId="Package\Load Dim Tables\Load DimEmployee\OLE DB Command.Outputs[OLE DB Command Output]" />
                 <path
                   refId="Package\Load Dim Tables\Load DimEmployee.Paths[OLE DB Source Output]"
                   endId="Package\Load Dim Tables\Load DimEmployee\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
                   name="OLE DB Source Output"
                   startId="Package\Load Dim Tables\Load DimEmployee\OLE DB Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Load Dim Tables\Load DimEmployee.Paths[Union All Output 1]"
+                  endId="Package\Load Dim Tables\Load DimEmployee\Derived Column 1.Inputs[Derived Column Input]"
+                  name="Union All Output 1"
+                  startId="Package\Load Dim Tables\Load DimEmployee\Union All.Outputs[Union All Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -3866,7 +4406,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{60DF69FB-2483-4A7C-A28E-A11771F66EF0}"
-              SQLTask:SqlStatementSource="-- CoffeeMerchantDM database developed&#xA;-- Written by Siyu Pei, Xiao Li, Dingyu Liang&#xA;-- Originally Written: January 2018&#xA;---------------------------------------------------------------------------------------&#xA;IF NOT EXISTS(SELECT * FROM sys.databases&#xA;&#x9;WHERE name = N'CoffeeMerchantDM')&#xA;&#x9;CREATE DATABASE CoffeeMerchantDM&#xA;GO&#xA;USE CoffeeMerchantDM&#xA;&#xA;--&#xA;-- Delete existing tables&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'FactSales'&#xA;       )&#xA;&#x9;DROP TABLE FactSales;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimProduct'&#xA;       )&#xA;&#x9;DROP TABLE DimProduct;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimEmployee'&#xA;       )&#xA;&#x9;DROP TABLE DimEmployee;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimDate'&#xA;       )&#xA;&#x9;DROP TABLE DimDate;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimRegion'&#xA;       )&#xA;&#x9;DROP TABLE DimRegion;&#xA;--&#xA;-- Create tables&#xA;--&#xA;CREATE TABLE DimRegion&#xA;&#x9;(Region_SK   INT IDENTITY(1,1) CONSTRAINT pk_dimregion PRIMARY KEY,&#xA;&#x9;Region_AK    NVARCHAR(2) NOT NULL,&#xA;&#x9;State        NVARCHAR(25) NOT NULL,&#xA;&#x9;City         NVARCHAR(50) NOT NULL&#xA;&#x9;);&#xA;&#xA;--&#xA;CREATE TABLE DimEmployee&#xA;&#x9;(Employee_SK    INT IDENTITY(1,1) CONSTRAINT pk_dimemployee PRIMARY KEY,&#xA;    Employee_AK     INT NOT NULL,&#xA;&#x9;First_Name      NVARCHAR(30) NOT NULL,&#xA;&#x9;Last_Name       NVARCHAR(30) NOT NULL,&#xA;&#x9;Commission_Rate NUMERIC(4,4) NOT NULL,&#xA;&#x9;Hire_Date       DATETIME NOT NULL,&#xA;&#x9;Birth_Date      DATETIME NOT NULL,&#xA;&#x9;Gender          NVARCHAR(1) NOT NULL &#xA;&#x9;);&#xA;--&#xA;CREATE TABLE DimProduct&#xA;&#x9;(Product_SK&#x9;       INT IDENTITY(1,1) CONSTRAINT pk_dimproduct PRIMARY KEY,&#xA;&#x9;Product_AK           INT NOT NULL,&#xA;&#x9;Item_Name&#x9;       NVARCHAR(40) NOT NULL,&#xA;&#x9;Item_Type&#x9;       NVARCHAR(5) NOT NULL,&#xA;&#x9;Country_of_Origin&#x9;NVARCHAR(40) NOT NULL&#xA;&#x9;);&#xA;--&#xA;CREATE TABLE [dbo].[DimDate]&#xA;&#x9;(&#x9;&#xA;&#x9;Date_SK INT PRIMARY KEY, &#xA;&#x9;Date DATETIME,&#xA;&#x9;FullDate CHAR(10),-- Date in MM-dd-yyyy format&#xA;&#x9;DayOfMonth INT, -- Field will hold day number of Month&#xA;&#x9;DayName VARCHAR(9), -- Contains name of the day, Sunday, Monday &#xA;&#x9;DayOfWeek INT,-- First Day Sunday=1 and Saturday=7&#xA;&#x9;DayOfWeekInMonth INT, -- 1st Monday or 2nd Monday in Month&#xA;&#x9;DayOfWeekInYear INT,&#xA;&#x9;DayOfQuarter INT,&#xA;&#x9;DayOfYear INT,&#xA;&#x9;WeekOfMonth INT,-- Week Number of Month &#xA;&#x9;WeekOfQuarter INT, -- Week Number of the Quarter&#xA;&#x9;WeekOfYear INT,-- Week Number of the Year&#xA;&#x9;Month INT, -- Number of the Month 1 to 12{}&#xA;&#x9;MonthName VARCHAR(9),-- January, February etc&#xA;&#x9;MonthOfQuarter INT,-- Month Number belongs to Quarter&#xA;&#x9;Quarter CHAR(2),&#xA;&#x9;QuarterName VARCHAR(9),-- First,Second..&#xA;&#x9;Year INT,-- Year value of Date stored in Row&#xA;&#x9;YearName CHAR(7), -- CY 2015,CY 2016&#xA;&#x9;MonthYear CHAR(10), -- Jan-2016,Feb-2016&#xA;&#x9;MMYYYY INT,&#xA;&#x9;FirstDayOfMonth DATE,&#xA;&#x9;LastDayOfMonth DATE,&#xA;&#x9;FirstDayOfQuarter DATE,&#xA;&#x9;LastDayOfQuarter DATE,&#xA;&#x9;FirstDayOfYear DATE,&#xA;&#x9;LastDayOfYear DATE,&#xA;&#x9;IsHoliday BIT,-- Flag 1=National Holiday, 0-No National Holiday&#xA;&#x9;IsWeekday BIT,-- 0=Week End ,1=Week Day&#xA;&#x9;Holiday VARCHAR(50),--Name of Holiday in US&#xA;&#x9;Season VARCHAR(10)--Name of Season&#xA;&#x9;);&#xA;--&#xA;CREATE TABLE FactSales&#xA;&#x9;(Product_SK  INT CONSTRAINT fk_factsales_dimproduct_sk FOREIGN KEY REFERENCES DimProduct(Product_SK),&#xA;        Employee_SK INT CONSTRAINT fk_factsales_dimemployee_sk FOREIGN KEY REFERENCES DimEmployee(Employee_SK),&#xA;        Region_SK  INT CONSTRAINT fk_factsales_dimregion_sk FOREIGN KEY REFERENCES DimRegion(Region_SK),&#xA;&#x9;&#x9;Order_ID INT,&#xA;        Order_Date INT NOT NULL CONSTRAINT fk_factsales_orderdate FOREIGN KEY REFERENCES DimDate(Date_SK),&#xA;        Ship_Date  INT CONSTRAINT fk_factsales_shipdate FOREIGN KEY REFERENCES DimDate(Date_SK),&#xA;        Sales_Quantity INT NOT NULL,&#xA;        Full_Price NUMERIC(6,2) NOT NULL,&#xA;        Cost NUMERIC(6,2) NOT NULL,&#xA;        Discount NUMERIC(4,4) NOT NULL,&#xA;        Inventory_On_Hand INT NOT NULL,&#xA;        Tax_Rate NUMERIC(7,4) NOT NULL,&#xA;&#x9;&#x9;CONSTRAINT pk_factsales PRIMARY KEY (Order_ID, Product_SK, Employee_SK, Region_SK)&#xA;);&#xA; --End of the OLAP file.&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="-- CoffeeMerchantDM database developed&#xA;-- Written by Siyu Pei, Xiao Li, Dingyu Liang&#xA;-- Originally Written: January 2018&#xA;---------------------------------------------------------------------------------------&#xA;IF NOT EXISTS(SELECT * FROM sys.databases&#xA;&#x9;WHERE name = N'CoffeeMerchantDM')&#xA;&#x9;CREATE DATABASE CoffeeMerchantDM&#xA;GO&#xA;USE CoffeeMerchantDM&#xA;&#xA;--&#xA;-- Delete existing tables&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'FactSales'&#xA;       )&#xA;&#x9;DROP TABLE FactSales;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimProduct'&#xA;       )&#xA;&#x9;DROP TABLE DimProduct;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimEmployee'&#xA;       )&#xA;&#x9;DROP TABLE DimEmployee;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimDate'&#xA;       )&#xA;&#x9;DROP TABLE DimDate;&#xA;--&#xA;IF EXISTS(&#xA;&#x9;SELECT *&#xA;&#x9;FROM sys.tables&#xA;&#x9;WHERE name = N'DimRegion'&#xA;       )&#xA;&#x9;DROP TABLE DimRegion;&#xA;--&#xA;-- Create tables&#xA;--&#xA;CREATE TABLE DimRegion&#xA;&#x9;(Region_SK   INT IDENTITY(1,1) CONSTRAINT pk_dimregion PRIMARY KEY,&#xA;&#x9;Region_AK    NVARCHAR(2) NOT NULL,&#xA;&#x9;State        NVARCHAR(25) NOT NULL,&#xA;&#x9;City         NVARCHAR(50) NOT NULL&#xA;&#x9;);&#xA;&#xA;--&#xA;CREATE TABLE DimEmployee&#xA;&#x9;(Employee_SK    INT IDENTITY(1,1) CONSTRAINT pk_dimemployee PRIMARY KEY,&#xA;    Employee_AK     INT NOT NULL,&#xA;&#x9;First_Name      NVARCHAR(30) NOT NULL,&#xA;&#x9;Last_Name       NVARCHAR(30) NOT NULL,&#xA;&#x9;Commission_Rate NUMERIC(4,4) NOT NULL,&#xA;&#x9;Hire_Date       DATETIME NOT NULL,&#xA;&#x9;Birth_Date      DATETIME NOT NULL,&#xA;&#x9;Gender          NVARCHAR(1) NOT NULL,&#xA;&#x9;StartDate DATETIME NULL,&#xA;&#x9;EndDate DATETIME NULL &#xA;&#x9;);&#xA;--&#xA;CREATE TABLE DimProduct&#xA;&#x9;(Product_SK&#x9;       INT IDENTITY(1,1) CONSTRAINT pk_dimproduct PRIMARY KEY,&#xA;&#x9;Product_AK           INT NOT NULL,&#xA;&#x9;Item_Name&#x9;       NVARCHAR(40) NOT NULL,&#xA;&#x9;Item_Type&#x9;       NVARCHAR(5) NOT NULL,&#xA;&#x9;Country_of_Origin&#x9;NVARCHAR(40) NOT NULL&#xA;&#x9;);&#xA;--&#xA;CREATE TABLE [dbo].[DimDate]&#xA;&#x9;(&#x9;&#xA;&#x9;Date_SK INT PRIMARY KEY, &#xA;&#x9;Date DATETIME,&#xA;&#x9;FullDate CHAR(10),-- Date in MM-dd-yyyy format&#xA;&#x9;DayOfMonth INT, -- Field will hold day number of Month&#xA;&#x9;DayName VARCHAR(9), -- Contains name of the day, Sunday, Monday &#xA;&#x9;DayOfWeek INT,-- First Day Sunday=1 and Saturday=7&#xA;&#x9;DayOfWeekInMonth INT, -- 1st Monday or 2nd Monday in Month&#xA;&#x9;DayOfWeekInYear INT,&#xA;&#x9;DayOfQuarter INT,&#xA;&#x9;DayOfYear INT,&#xA;&#x9;WeekOfMonth INT,-- Week Number of Month &#xA;&#x9;WeekOfQuarter INT, -- Week Number of the Quarter&#xA;&#x9;WeekOfYear INT,-- Week Number of the Year&#xA;&#x9;Month INT, -- Number of the Month 1 to 12{}&#xA;&#x9;MonthName VARCHAR(9),-- January, February etc&#xA;&#x9;MonthOfQuarter INT,-- Month Number belongs to Quarter&#xA;&#x9;Quarter CHAR(2),&#xA;&#x9;QuarterName VARCHAR(9),-- First,Second..&#xA;&#x9;Year INT,-- Year value of Date stored in Row&#xA;&#x9;YearName CHAR(7), -- CY 2015,CY 2016&#xA;&#x9;MonthYear CHAR(10), -- Jan-2016,Feb-2016&#xA;&#x9;MMYYYY INT,&#xA;&#x9;FirstDayOfMonth DATE,&#xA;&#x9;LastDayOfMonth DATE,&#xA;&#x9;FirstDayOfQuarter DATE,&#xA;&#x9;LastDayOfQuarter DATE,&#xA;&#x9;FirstDayOfYear DATE,&#xA;&#x9;LastDayOfYear DATE,&#xA;&#x9;IsHoliday BIT,-- Flag 1=National Holiday, 0-No National Holiday&#xA;&#x9;IsWeekday BIT,-- 0=Week End ,1=Week Day&#xA;&#x9;Holiday VARCHAR(50),--Name of Holiday in US&#xA;&#x9;Season VARCHAR(10)--Name of Season&#xA;&#x9;);&#xA;--&#xA;CREATE TABLE FactSales&#xA;&#x9;(Product_SK  INT CONSTRAINT fk_factsales_dimproduct_sk FOREIGN KEY REFERENCES DimProduct(Product_SK),&#xA;        Employee_SK INT CONSTRAINT fk_factsales_dimemployee_sk FOREIGN KEY REFERENCES DimEmployee(Employee_SK),&#xA;        Region_SK  INT CONSTRAINT fk_factsales_dimregion_sk FOREIGN KEY REFERENCES DimRegion(Region_SK),&#xA;&#x9;&#x9;Order_ID INT,&#xA;        Order_Date INT NOT NULL CONSTRAINT fk_factsales_orderdate FOREIGN KEY REFERENCES DimDate(Date_SK),&#xA;        Ship_Date  INT CONSTRAINT fk_factsales_shipdate FOREIGN KEY REFERENCES DimDate(Date_SK),&#xA;        Sales_Quantity INT NOT NULL,&#xA;        Full_Price NUMERIC(6,2) NOT NULL,&#xA;        Cost NUMERIC(6,2) NOT NULL,&#xA;        Discount NUMERIC(4,4) NOT NULL,&#xA;        Inventory_On_Hand INT NOT NULL,&#xA;        Tax_Rate NUMERIC(7,4) NOT NULL,&#xA;&#x9;&#x9;CONSTRAINT pk_factsales PRIMARY KEY (Order_ID, Product_SK, Employee_SK, Region_SK)&#xA;);&#xA; --End of the OLAP file.&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -3903,9 +4443,9 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="146.666666666667,42.6666666666667"
+          Size="159.333333333334,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimDate"
-          TopLeft="78.8749974140277,33.5499950370193" />
+          TopLeft="71.5833308560153,33.5499950370193" />
         <NodeLayout
           Size="169.333333333334,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimEmployee"
@@ -3913,80 +4453,80 @@ INNER JOIN CoffeeMerchant.dbo.Employee
         <NodeLayout
           Size="160,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimProduct"
-          TopLeft="73.041664465641,107.683328308364" />
+          TopLeft="73.041664465641,115.266661506097" />
         <NodeLayout
           Size="156,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimRegion"
-          TopLeft="80.3333310236534,273.649992937148" />
+          TopLeft="68.8749978610625,276.899992879033" />
         <EdgeLayout
           Id="Package\Load Dim Tables.PrecedenceConstraints[Constraint]"
-          TopLeft="152.624997606501,76.216661703686">
+          TopLeft="152.145830994162,76.216661703686">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.4666666046779"
+              EndConnector="0,39.0499998024108"
               Start="0,0"
-              End="0,23.9666666046779">
+              End="0,31.5499998024108">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.9666666046779" />
+                    End="0,31.5499998024108" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.9932421875,7.20647783358896,35.986484375,9.5537109375"
+              BoundingBox="-17.9932421875,10.9981444324554,35.986484375,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Dim Tables.PrecedenceConstraints[Constraint 1]"
-          TopLeft="153.18749783157,150.349994975031">
+          TopLeft="153.187497831571,157.933328172763">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.8000000929836"
+              EndConnector="0,35.2166668952503"
               Start="0,0"
-              End="0,35.3000000929836">
+              End="0,27.7166668952503">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.3000000929836" />
+                    End="0,27.7166668952503" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.9932421875,12.8731445777418,35.986484375,9.5537109375"
+              BoundingBox="-17.9932421875,9.08147797887516,35.986484375,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Dim Tables.PrecedenceConstraints[Constraint 2]"
-          TopLeft="155.833331110577,235.816661734681">
+          TopLeft="150.104164529281,235.81666173468">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.8333312024672"
+              EndConnector="0,41.0833311443527"
               Start="0,0"
-              End="0,30.3333312024672">
+              End="0,33.5833311443527">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.3333312024672" />
+                    End="0,33.5833311443527" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.9932421875,10.3898101324836,35.986484375,9.5537109375"
+              BoundingBox="-17.9932421875,12.0148101034263,35.986484375,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3996,7 +4536,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           PanelSize="302.666666666667,371.333333333334"
           Size="302.666666666667,414"
           Id="Package\Load Dim Tables"
-          TopLeft="399.999994039536,226.449996904433" />
+          TopLeft="399.999994039536,236.199996730089" />
         <NodeLayout
           Size="149.333333333334,42.6666666666667"
           Id="Package\Load Fact Table\Load FactSales"
@@ -4007,45 +4547,45 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           PanelSize="234,109.333333333334"
           Size="234,152"
           Id="Package\Load Fact Table"
-          TopLeft="767.083321902901,356.338886284066" />
+          TopLeft="767.083321902901,366.088886109722" />
         <NodeLayout
-          Size="121.333333333334,42.6666666666667"
+          Size="144,42"
           Id="Package\Prepare ETL\Build DM"
-          TopLeft="42.5416651486108,26.0999980551006" />
+          TopLeft="61.2916648692139,35.4333312334618" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="207.333333333334,115.333333333334"
-          Size="207.333333333334,158"
+          PanelSize="296,132.666666666667"
+          Size="296,175.333333333334"
           Id="Package\Prepare ETL"
-          TopLeft="446.249993350357,9.53333316286404" />
+          TopLeft="405.624993955717,9.53333316286404" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="550.624993694946,167.533333162864">
+          TopLeft="552.479160664293,184.866666496197">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58.916663741569"
+              EndConnector="0,51.3333302338921"
               Start="0,0"
-              End="0,51.416663741569">
+              End="0,43.8333302338921">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.416663741569" />
+                    End="0,43.8333302338921" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.9932421875,20.9314764020345,35.986484375,9.5537109375"
+              BoundingBox="-17.9932421875,17.139809648196,35.986484375,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="702.666660706202,432.894441594249">
+          TopLeft="702.666660706202,442.644441419906">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4074,98 +4614,84 @@ INNER JOIN CoffeeMerchant.dbo.Employee
     design-time-name="Package\Load Dim Tables\Load DimEmployee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimEmployee\OLE DB Command"
-          TopLeft="230.166666666667,210.833333333334" />
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimEmployee\Insert Destination"
-          TopLeft="5.50000000000006,210.833333333334" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="209.333333333334,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimEmployee\Slowly Changing Dimension"
-          TopLeft="208.833333333333,108.166666666667" />
+          TopLeft="128.166666666667,108.166666666666" />
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimEmployee\OLE DB Source"
-          TopLeft="238.166666666667,5.50000000000004" />
-        <EdgeLayout
-          Id="Package\Load Dim Tables\Load DimEmployee.Paths[New Output]"
-          TopLeft="279.944444444444,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-192.444444444444,60.0000000000001"
-              Start="0,0"
-              End="-192.444444444444,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2730720606827" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2730720606827"
-                    Point2="0,24.2730720606827"
-                    Point3="-4,24.2730720606827" />
-                  <mssgle:LineSegment
-                    End="-188.444444444444,24.2730720606827" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-188.444444444444,24.2730720606827"
-                    Point2="-192.444444444444,24.2730720606827"
-                    Point3="-192.444444444444,28.2730720606827" />
-                  <mssgle:LineSegment
-                    End="-192.444444444444,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-123.313608940972,29.2730720606827,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Dim Tables\Load DimEmployee.Paths[Changing Attribute Updates Output]"
-          TopLeft="347.055555555556,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-33.5555555555555,60.0000000000001"
-              Start="0,0"
-              End="-33.5555555555555,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2730720606827" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2730720606827"
-                    Point2="0,24.2730720606827"
-                    Point3="-4,24.2730720606827" />
-                  <mssgle:LineSegment
-                    End="-29.5555555555555,24.2730720606827" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29.5555555555555,24.2730720606827"
-                    Point2="-33.5555555555555,24.2730720606827"
-                    Point3="-33.5555555555555,28.2730720606827" />
-                  <mssgle:LineSegment
-                    End="-33.5555555555555,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-95.3116840277778,29.2730720606827,157.0678125,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="157.5,5.49999999999993" />
         <EdgeLayout
           Id="Package\Load Dim Tables\Load DimEmployee.Paths[OLE DB Source Output]"
-          TopLeft="313.5,48.1666666666667">
+          TopLeft="232.833333333333,48.1666666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\Derived Column"
+          TopLeft="17.5,210.833333333333" />
+        <EdgeLayout
+          Id="Package\Load Dim Tables\Load DimEmployee.Paths[Historical Attribute Inserts Output]"
+          TopLeft="182.5,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87.6666666666667,59.9999999999999"
+              Start="0,0"
+              End="-87.6666666666667,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.503144654088"
+                    Point2="0,20.503144654088"
+                    Point3="-4,20.503144654088" />
+                  <mssgle:LineSegment
+                    End="-83.6666666666667,20.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83.6666666666667,20.503144654088"
+                    Point2="-87.6666666666667,20.503144654088"
+                    Point3="-87.6666666666667,24.503144654088" />
+                  <mssgle:LineSegment
+                    End="-87.6666666666667,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-118.889720052083,25.503144654088,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\OLE DB Command"
+          TopLeft="5.50000000000004,313.5" />
+        <EdgeLayout
+          Id="Package\Load Dim Tables\Load DimEmployee.Paths[Derived Column Output]"
+          TopLeft="91.8333333333334,253.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4182,8 +4708,172 @@ INNER JOIN CoffeeMerchant.dbo.Employee
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\Union All"
+          TopLeft="172.166666666667,416.166666666667" />
+        <EdgeLayout
+          Id="Package\Load Dim Tables\Load DimEmployee.Paths[New Output]"
+          TopLeft="232.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.8888888888889,265.333333333333"
+              Start="0,0"
+              End="18.8888888888889,257.833333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,153.127982646421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,153.127982646421"
+                    Point2="0,157.127982646421"
+                    Point3="4,157.127982646421" />
+                  <mssgle:LineSegment
+                    End="14.8888888888889,157.127982646421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.8888888888889,157.127982646421"
+                    Point2="18.8888888888889,157.127982646421"
+                    Point3="18.8888888888889,161.127982646421" />
+                  <mssgle:LineSegment
+                    End="18.8888888888889,257.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8,18.2500000000001,16,16"
+              BoundingBox="-17.6469422743055,162.127982646421,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim Tables\Load DimEmployee.Paths[OLE DB Command Output]"
+          TopLeft="88.8333333333334,356.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.111111111111,60.0000000000001"
+              Start="0,0"
+              End="125.111111111111,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.531453362256"
+                    Point2="0,35.531453362256"
+                    Point3="4,35.531453362256" />
+                  <mssgle:LineSegment
+                    End="121.111111111111,35.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.111111111111,35.531453362256"
+                    Point2="125.111111111111,35.531453362256"
+                    Point3="125.111111111111,39.531453362256" />
+                  <mssgle:LineSegment
+                    End="125.111111111111,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\Derived Column 1"
+          TopLeft="150.833333333333,518.833333333333" />
+        <EdgeLayout
+          Id="Package\Load Dim Tables\Load DimEmployee.Paths[Union All Output 1]"
+          TopLeft="232.833333333333,458.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\Insert Destination"
+          TopLeft="150.833333333333,621.5" />
+        <EdgeLayout
+          Id="Package\Load Dim Tables\Load DimEmployee.Paths[Derived Column Output1]"
+          TopLeft="232.833333333333,561.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1"
+          TopLeft="293.833333333333,210.833333333333" />
+        <EdgeLayout
+          Id="Package\Load Dim Tables\Load DimEmployee.Paths[Changing Attribute Updates Output]"
+          TopLeft="283.166666666667,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98.6666666666667,59.9999999999999"
+              Start="0,0"
+              End="98.6666666666667,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.503144654088"
+                    Point2="0,20.503144654088"
+                    Point3="4,20.503144654088" />
+                  <mssgle:LineSegment
+                    End="94.6666666666667,20.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94.6666666666667,20.503144654088"
+                    Point2="98.6666666666667,20.503144654088"
+                    Point3="98.6666666666667,24.503144654088" />
+                  <mssgle:LineSegment
+                    End="98.6666666666667,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-29.2005729166667,25.503144654088,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4211,7 +4901,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Commission_Rate]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;Commission_Rate&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Employee_AK]&lt;/IdentificationString&gt;
@@ -4241,23 +4931,27 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Last_Name]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;Last_Name&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
     &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
   &lt;/GeneratedComponentsIdentificationStrings&gt;
   &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
   &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
   &lt;CurrentIndicatorColumn /&gt;
   &lt;InferredIndicatorColumn /&gt;
   &lt;ValueCurrent /&gt;
   &lt;ValueExpired /&gt;
-  &lt;StartDateColumn /&gt;
-  &lt;EndDateColumn /&gt;
-  &lt;DateVariable /&gt;
+  &lt;StartDateColumn&gt;StartDate&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;EndDate&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
       </Property>
@@ -4311,9 +5005,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,18.2500000000001,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4566,9 +5258,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,18.2500000000001,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4683,9 +5373,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4756,7 +5444,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,9.44531238377064,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,9.44531238377065,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4804,7 +5492,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,8.44531250000001,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,8.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
