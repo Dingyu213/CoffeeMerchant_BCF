@@ -19,6 +19,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM ETL", "DM ETL", "{872200
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Coffee Merchant SSIS", "DM ETL\Coffee Merchant SSIS\Coffee Merchant SSIS.dtproj", "{419046D5-5D90-4327-A7EF-6025074F8C4D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM Multidimensional Analysis", "DM Multidimensional Analysis", "{1A25D380-1CCC-462B-AEB7-B25683BE243B}"
+	ProjectSection(SolutionItems) = preProject
+		DM Multidimensional Analysis\CoffeeMerchantDM PowerPivot Analysis.xlsx = DM Multidimensional Analysis\CoffeeMerchantDM PowerPivot Analysis.xlsx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
