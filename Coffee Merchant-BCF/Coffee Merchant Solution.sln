@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM Multidimensional Analysi
 		DM Multidimensional Analysis\CoffeeMerchantDM PowerPivot Analysis.xlsx = DM Multidimensional Analysis\CoffeeMerchantDM PowerPivot Analysis.xlsx
 	EndProjectSection
 EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "CoffeeMerchantDM Cube Analysis", "DM Multidimensional Analysis\CoffeeMerchantDM Cube Analysis\CoffeeMerchantDM Cube Analysis.dwproj", "{11CEFE98-1CF3-426E-84C4-AC17533E6DEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -31,6 +33,9 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{419046D5-5D90-4327-A7EF-6025074F8C4D}.Development|Default.ActiveCfg = Development
 		{419046D5-5D90-4327-A7EF-6025074F8C4D}.Development|Default.Build.0 = Development
+		{11CEFE98-1CF3-426E-84C4-AC17533E6DEC}.Development|Default.ActiveCfg = Development
+		{11CEFE98-1CF3-426E-84C4-AC17533E6DEC}.Development|Default.Build.0 = Development
+		{11CEFE98-1CF3-426E-84C4-AC17533E6DEC}.Development|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
