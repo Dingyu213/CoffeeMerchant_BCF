@@ -21,6 +21,7 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Coffee Merchant SSIS", "DM 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM Multidimensional Analysis", "DM Multidimensional Analysis", "{1A25D380-1CCC-462B-AEB7-B25683BE243B}"
 	ProjectSection(SolutionItems) = preProject
+		DM Multidimensional Analysis\CoffeeMerchantDM Cube Analysis.xlsx = DM Multidimensional Analysis\CoffeeMerchantDM Cube Analysis.xlsx
 		DM Multidimensional Analysis\CoffeeMerchantDM PowerPivot Analysis.xlsx = DM Multidimensional Analysis\CoffeeMerchantDM PowerPivot Analysis.xlsx
 	EndProjectSection
 EndProject
