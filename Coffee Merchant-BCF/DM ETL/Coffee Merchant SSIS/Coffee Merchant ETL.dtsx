@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-FTULKI8\XIAO LI"
   DTS:DTSID="{3E7D36F4-F5E0-41B2-B162-34D448544AA5}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LastModifiedProductVersion="13.0.1400.361"
   DTS:LocaleID="1033"
   DTS:ObjectName="Coffee Merchant ETL"
   DTS:PackageType="5"
-  DTS:VersionBuild="46"
-  DTS:VersionGUID="{A3E5676A-30DD-41E1-AC09-19AC6D823E01}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{B9525756-5EAA-468E-965F-703908FBF18C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -253,7 +253,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -447,7 +447,7 @@
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimEmployee] SET [EndDate] = ? WHERE [Employee_AK] = ? AND [EndDate] IS NULL</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimEmployee] SET [EndDate] = ? WHERE [Employee_AK] = ? AND [EndDate] IS NULL</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -559,7 +559,7 @@
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimEmployee] SET [Gender] = ? WHERE [Employee_AK] = ? AND [EndDate] IS NULL</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimEmployee] SET [Gender] = ? WHERE [Employee_AK] = ? AND [EndDate] IS NULL</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -680,7 +680,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT dbo.Employee.EmployeeID AS Employee_AK,
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT dbo.Employee.EmployeeID AS Employee_AK,
        dbo.Employee.Gender AS Gender,
 	   dbo.Employee.FirstName AS First_Name,
 	   dbo.Employee.LastName AS Last_Name,
@@ -904,7 +904,7 @@ ORDER BY Employee_AK</property>
                       dataType="System.String"
                       description="Specifies the SELECT statement used to create a schema rowset."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Birth_Date], [Commission_Rate], [Employee_AK], [First_Name], [Gender], [Hire_Date], [Last_Name],[StartDate],[EndDate] FROM [dbo].[DimEmployee]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Birth_Date], [Commission_Rate], [Employee_AK], [First_Name], [Gender], [Hire_Date], [Last_Name],[StartDate],[EndDate] FROM [dbo].[DimEmployee]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -1504,7 +1504,7 @@ ORDER BY Employee_AK</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1650,7 +1650,7 @@ ORDER BY Employee_AK</property>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimProduct] SET [Country_of_Origin] = ?,[Item_Name] = ?,[Item_Type] = ? WHERE [Product_AK] = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimProduct] SET [Country_of_Origin] = ?,[Item_Name] = ?,[Item_Type] = ? WHERE [Product_AK] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1809,7 +1809,7 @@ ORDER BY Employee_AK</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">-- Script written by Siyu Pei
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- Script written by Siyu Pei
 -- Script query to select Products for DimProduct
 SELECT InventoryID AS Product_AK,
 	Inventory.Name AS Item_Name,
@@ -1974,7 +1974,7 @@ ORDER BY Product_AK</property>
                       dataType="System.String"
                       description="Specifies the SELECT statement used to create a schema rowset."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Country_of_Origin], [Item_Name], [Item_Type], [Product_AK] FROM [dbo].[DimProduct]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Country_of_Origin], [Item_Name], [Item_Type], [Product_AK] FROM [dbo].[DimProduct]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -2213,7 +2213,7 @@ ORDER BY Product_AK</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2349,7 +2349,7 @@ ORDER BY Product_AK</property>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimRegion] SET [City] = ?,[State] = ? WHERE [Region_AK] = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimRegion] SET [City] = ?,[State] = ? WHERE [Region_AK] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2491,7 +2491,7 @@ ORDER BY Product_AK</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">-- Script written by Dingyu Liang
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- Script written by Dingyu Liang
 -- Script query to select Region for DimRegion
 SELECT DISTINCT StateID AS Region_AK,
 ISNULL(dbo.State.StateName, 'N/A') AS State,
@@ -2638,7 +2638,7 @@ ORDER BY Region_AK</property>
                       dataType="System.String"
                       description="Specifies the SELECT statement used to create a schema rowset."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [City], [Region_AK], [State] FROM [dbo].[DimRegion]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [City], [Region_AK], [State] FROM [dbo].[DimRegion]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -2887,14 +2887,14 @@ ORDER BY Region_AK</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT Employee_SK, Employee_AK
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Employee_SK, Employee_AK
 FROM DimEmployee</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT Employee_SK, Employee_AK
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT Employee_SK, Employee_AK
 FROM DimEmployee) [refTable]
 where [refTable].[Employee_AK] = ?</property>
                     <property
@@ -3047,14 +3047,14 @@ where [refTable].[Employee_AK] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT Date_SK, Date
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Date_SK, Date
 FROM   DimDate</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT Date_SK, Date
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT Date_SK, Date
 FROM   DimDate) [refTable]
 where [refTable].[Date] = ?</property>
                     <property
@@ -3207,14 +3207,14 @@ where [refTable].[Date] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT Product_SK, Product_AK
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Product_SK, Product_AK
 FROM DimProduct</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT Product_SK, Product_AK
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT Product_SK, Product_AK
 FROM DimProduct) [refTable]
 where [refTable].[Product_AK] = ?</property>
                     <property
@@ -3367,14 +3367,14 @@ where [refTable].[Product_AK] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT Region_SK, Region_AK
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Region_SK, Region_AK
 FROM DimRegion</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT Region_SK, Region_AK
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT Region_SK, Region_AK
 FROM DimRegion) [refTable]
 where [refTable].[Region_AK] = ?</property>
                     <property
@@ -3528,14 +3528,14 @@ where [refTable].[Region_AK] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT Date_SK, Date
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Date_SK, Date
  FROM DimDate</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT Date_SK, Date
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT Date_SK, Date
  FROM DimDate) [refTable]
 where [refTable].[Date] = ?</property>
                     <property
@@ -3699,7 +3699,7 @@ where [refTable].[Date] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3938,7 +3938,7 @@ where [refTable].[Date] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">-- Script written by Xiao Li, Dingyu Liang, Siyu Pei
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- Script written by Xiao Li, Dingyu Liang, Siyu Pei
 -- Script query to load the Fact Table
 SELECT  
 	dbo.[Order].OrderID AS OrderID_DD,
@@ -4616,13 +4616,61 @@ INNER JOIN CoffeeMerchant.dbo.Employee
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\Union All"
+          TopLeft="172.166666666667,416.166666666667" />
+        <NodeLayout
           Size="209.333333333334,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimEmployee\Slowly Changing Dimension"
           TopLeft="128.166666666667,108.166666666666" />
         <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\Derived Column 1"
+          TopLeft="150.833333333333,518.833333333333" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\Insert Destination"
+          TopLeft="150.833333333333,621.5" />
+        <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Load Dim Tables\Load DimEmployee\OLE DB Source"
           TopLeft="157.5,5.49999999999993" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\OLE DB Command"
+          TopLeft="5.50000000000004,313.5" />
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1"
+          TopLeft="293.833333333333,210.833333333333" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Load Dim Tables\Load DimEmployee\Derived Column"
+          TopLeft="17.5,210.833333333333" />
+        <EdgeLayout
+          Id="Package\Load Dim Tables\Load DimEmployee.Paths[Union All Output 1]"
+          TopLeft="232.833333333333,458.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Dim Tables\Load DimEmployee.Paths[OLE DB Source Output]"
           TopLeft="232.833333333333,48.1666666666666">
@@ -4642,79 +4690,47 @@ INNER JOIN CoffeeMerchant.dbo.Employee
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimEmployee\Derived Column"
-          TopLeft="17.5,210.833333333333" />
         <EdgeLayout
-          Id="Package\Load Dim Tables\Load DimEmployee.Paths[Historical Attribute Inserts Output]"
-          TopLeft="182.5,150.833333333333">
+          Id="Package\Load Dim Tables\Load DimEmployee.Paths[OLE DB Command Output]"
+          TopLeft="88.8333333333334,356.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-87.6666666666667,59.9999999999999"
+              EndConnector="125.111111111111,60.0000000000001"
               Start="0,0"
-              End="-87.6666666666667,52.4999999999999">
+              End="125.111111111111,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.503144654088" />
+                    End="0,31.531453362256" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.503144654088"
-                    Point2="0,20.503144654088"
-                    Point3="-4,20.503144654088" />
+                    Point1="0,31.531453362256"
+                    Point2="0,35.531453362256"
+                    Point3="4,35.531453362256" />
                   <mssgle:LineSegment
-                    End="-83.6666666666667,20.503144654088" />
+                    End="121.111111111111,35.531453362256" />
                   <mssgle:CubicBezierSegment
-                    Point1="-83.6666666666667,20.503144654088"
-                    Point2="-87.6666666666667,20.503144654088"
-                    Point3="-87.6666666666667,24.503144654088" />
+                    Point1="121.111111111111,35.531453362256"
+                    Point2="125.111111111111,35.531453362256"
+                    Point3="125.111111111111,39.531453362256" />
                   <mssgle:LineSegment
-                    End="-87.6666666666667,52.4999999999999" />
+                    End="125.111111111111,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-118.889720052083,25.503144654088,150.1127734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimEmployee\OLE DB Command"
-          TopLeft="5.50000000000004,313.5" />
-        <EdgeLayout
-          Id="Package\Load Dim Tables\Load DimEmployee.Paths[Derived Column Output]"
-          TopLeft="91.8333333333334,253.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="121.333333333334,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimEmployee\Union All"
-          TopLeft="172.166666666667,416.166666666667" />
         <EdgeLayout
           Id="Package\Load Dim Tables\Load DimEmployee.Paths[New Output]"
           TopLeft="232.833333333333,150.833333333333">
@@ -4752,69 +4768,41 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Dim Tables\Load DimEmployee.Paths[OLE DB Command Output]"
-          TopLeft="88.8333333333334,356.166666666667">
+          Id="Package\Load Dim Tables\Load DimEmployee.Paths[Historical Attribute Inserts Output]"
+          TopLeft="182.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="125.111111111111,60.0000000000001"
+              EndConnector="-87.6666666666667,59.9999999999999"
               Start="0,0"
-              End="125.111111111111,52.5000000000001">
+              End="-87.6666666666667,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.531453362256" />
+                    End="0,16.503144654088" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.531453362256"
-                    Point2="0,35.531453362256"
-                    Point3="4,35.531453362256" />
+                    Point1="0,16.503144654088"
+                    Point2="0,20.503144654088"
+                    Point3="-4,20.503144654088" />
                   <mssgle:LineSegment
-                    End="121.111111111111,35.531453362256" />
+                    End="-83.6666666666667,20.503144654088" />
                   <mssgle:CubicBezierSegment
-                    Point1="121.111111111111,35.531453362256"
-                    Point2="125.111111111111,35.531453362256"
-                    Point3="125.111111111111,39.531453362256" />
+                    Point1="-83.6666666666667,20.503144654088"
+                    Point2="-87.6666666666667,20.503144654088"
+                    Point3="-87.6666666666667,24.503144654088" />
                   <mssgle:LineSegment
-                    End="125.111111111111,52.5000000000001" />
+                    End="-87.6666666666667,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-118.889720052083,25.503144654088,150.1127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimEmployee\Derived Column 1"
-          TopLeft="150.833333333333,518.833333333333" />
-        <EdgeLayout
-          Id="Package\Load Dim Tables\Load DimEmployee.Paths[Union All Output 1]"
-          TopLeft="232.833333333333,458.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimEmployee\Insert Destination"
-          TopLeft="150.833333333333,621.5" />
         <EdgeLayout
           Id="Package\Load Dim Tables\Load DimEmployee.Paths[Derived Column Output1]"
           TopLeft="232.833333333333,561.5">
@@ -4834,13 +4822,35 @@ INNER JOIN CoffeeMerchant.dbo.Employee
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="176,42.6666666666667"
-          Id="Package\Load Dim Tables\Load DimEmployee\OLE DB Command 1"
-          TopLeft="293.833333333333,210.833333333333" />
+        <EdgeLayout
+          Id="Package\Load Dim Tables\Load DimEmployee.Paths[Derived Column Output]"
+          TopLeft="91.8333333333334,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Dim Tables\Load DimEmployee.Paths[Changing Attribute Updates Output]"
           TopLeft="283.166666666667,150.833333333333">
@@ -5005,7 +5015,9 @@ INNER JOIN CoffeeMerchant.dbo.Employee
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5258,7 +5270,9 @@ INNER JOIN CoffeeMerchant.dbo.Employee
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5396,7 +5410,7 @@ INNER JOIN CoffeeMerchant.dbo.Employee
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,8.09114473400015,96.3827734375,11.609375"
+              BoundingBox="-57.0600390625,5.89583223400015,114.120078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
